@@ -1,0 +1,145 @@
+.. APRIORA plugin manual documentation master file, created by
+   sphinx-quickstart on Tue Sep  9 15:01:13 2025.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+*******************************************
+APRIORA plugin manual (v.0.6)
+*******************************************
+
+Add your content using ``reStructuredText`` syntax. See the
+`reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
+documentation for details.
+
+| *italic*  
+| **bold**  
+| ***bold and italic***  
+
+The *APRIORA* plugin is a QGIS tool divided in two groups:
+
+* Flow Estimation
+* API Emission
+
+The first set of tools is designed to estimate flow in normal and low condition in a catchment, while the
+second one calculate concentration of different Active Pharmaceutical Ingredients (APIs) and perform the 
+risk assessment in each river section.
+
+Installation for Windows
+========================
+
+Extra library required
+----------------------
+
+To run the plugin, you will need an extra library called "scikit-learn" (insert link) which is not included in the standard QGIS installation.
+To install the missing package, follow these steps:
+
+1. Open "OSGeo4W Shell", you can find it already installed with QGIS.
+2. Digit::
+
+      python -m pip install scikit-learn
+
+3. Press *Enter*
+
+Add a local repository to QGIS
+------------------------------
+
+After succesfully installed "scikit-learn", you can open QGIS and go to *Plugins* --> *Manage and Install Plugins*.
+
+.. image:: images/Picture1.png
+
+1. Go to *Settings* and click on *Add...*
+2. Under *Name* digit "APRIORA repository" (or whatever you prefer)
+3. Under *URL* insert:
+   https://cridrive66.github.io/APRIORA-rep/plugin.xml
+4. Click on *OK*
+
+.. image:: images/Repository_1.png
+
+5. Check if the *Status* of the repository is **connected**
+
+.. image:: images/Repository_2.png
+
+
+
+
+Flow Estimation
+===============
+
+The *Flow Estimation* provides an estimation of yearly mean flow and yearly mean low fow for each subcatchment or 
+river section within a specified catchment area. This estimation is made by **Random Forest** (insert link), which
+uses the catchment's geographical characteristics as predictors and water flow data collected from gauging stations
+to calibrate and validate the approach.
+
+This group of tools is divided 4 different processes:
+
+* Fix River Network
+* Contributing Area
+* Calculate Geofactors
+* Flow Estimation
+
+
+Fix River Network
+-----------------
+
+Here we discuss what the Fix River Network is about.
+
+Importance of NET_ID and NET_TO
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+NET_ID and NET_TO are very important because they explain the relationship of the river network.
+
+Non-aligned river sections
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+It can happen that there is a misalignment between the river sections and the subcatchments. Here we fix it.
+
+Why to fix it?
+""""""""""""""
+
+We fix it because otherwise the model struggle to understand where the water is flowing and it can cause errors or over/under estimation during the flow model.
+
+
+Contributing Area
+-----------------
+
+We have gauging stations and we want to calculate their contributing area.
+
+How to do it?
+^^^^^^^^^^^^^
+
+We do it using it a nice algorithm.
+
+
+Calculate Geofactors
+--------------------
+
+The geofactors are very important for the model. They are the predictors of the model and they are describing certain characteristics of the subcatchments.
+
+
+Flow Estimation
+---------------
+
+This is the last part of the model where we estimate the flow.
+
+Random Forest Regressor
+^^^^^^^^^^^^^^^^^^^^^^^
+
+This is the model used for estimating the flow.
+
+
+
+API Emission
+============
+
+This part is divided in 3 different tools:
+
+* Emission Loads.
+* Accumulation.
+* Risk Assessment.
+
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
