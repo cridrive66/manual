@@ -1,0 +1,243 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>APRIORA plugin manual (v.0.6) &mdash; APRIORA plugin manual  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            APRIORA plugin manual
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">APRIORA plugin manual (v.0.6)</a><ul>
+<li><a class="reference internal" href="#installation-for-windows">Installation for Windows</a><ul>
+<li><a class="reference internal" href="#extra-library-required">Extra library required</a></li>
+<li><a class="reference internal" href="#add-a-local-repository-to-qgis">Add a local repository to QGIS</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#flow-estimation">Flow Estimation</a><ul>
+<li><a class="reference internal" href="#fix-river-network">Fix River Network</a><ul>
+<li><a class="reference internal" href="#importance-of-net-id-and-net-to">Importance of NET_ID and NET_TO</a></li>
+<li><a class="reference internal" href="#non-aligned-river-sections">Non-aligned river sections</a><ul>
+<li><a class="reference internal" href="#why-to-fix-it">Why to fix it?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#contributing-area">Contributing Area</a><ul>
+<li><a class="reference internal" href="#how-to-do-it">How to do it?</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#calculate-geofactors">Calculate Geofactors</a></li>
+<li><a class="reference internal" href="#id1">Flow Estimation</a><ul>
+<li><a class="reference internal" href="#random-forest-regressor">Random Forest Regressor</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#api-emission">API Emission</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">APRIORA plugin manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">APRIORA plugin manual (v.0.6)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="apriora-plugin-manual-v-0-6">
+<h1>APRIORA plugin manual (v.0.6)<a class="headerlink" href="#apriora-plugin-manual-v-0-6" title="Link to this heading"></a></h1>
+<p>Add your content using <code class="docutils literal notranslate"><span class="pre">reStructuredText</span></code> syntax. See the
+<a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html">reStructuredText</a>
+documentation for details.</p>
+<div class="line-block">
+<div class="line"><em>italic</em></div>
+<div class="line"><strong>bold</strong></div>
+<div class="line"><strong>*bold and italic*</strong></div>
+</div>
+<p>The <em>APRIORA</em> plugin is a QGIS tool divided in two groups:</p>
+<ul class="simple">
+<li><p>Flow Estimation</p></li>
+<li><p>API Emission</p></li>
+</ul>
+<p>The first set of tools is designed to estimate flow in normal and low condition in a catchment, while the
+second one calculate concentration of different Active Pharmaceutical Ingredients (APIs) and perform the
+risk assessment in each river section.</p>
+<section id="installation-for-windows">
+<h2>Installation for Windows<a class="headerlink" href="#installation-for-windows" title="Link to this heading"></a></h2>
+<section id="extra-library-required">
+<h3>Extra library required<a class="headerlink" href="#extra-library-required" title="Link to this heading"></a></h3>
+<p>To run the plugin, you will need an extra library called “scikit-learn” (insert link) which is not included in the standard QGIS installation.
+To install the missing package, follow these steps:</p>
+<ol class="arabic">
+<li><p>Open “OSGeo4W Shell”, you can find it already installed with QGIS.</p></li>
+<li><p>Digit:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">scikit</span><span class="o">-</span><span class="n">learn</span>
+</pre></div>
+</div>
+</li>
+<li><p>Press <em>Enter</em></p></li>
+</ol>
+</section>
+<section id="add-a-local-repository-to-qgis">
+<h3>Add a local repository to QGIS<a class="headerlink" href="#add-a-local-repository-to-qgis" title="Link to this heading"></a></h3>
+<p>After succesfully installed “scikit-learn”, you can open QGIS and go to <em>Plugins</em> –&gt; <em>Manage and Install Plugins</em>.</p>
+<img alt="_images/Picture1.png" src="_images/Picture1.png" />
+<ol class="arabic simple">
+<li><p>Go to <em>Settings</em> and click on <em>Add…</em></p></li>
+<li><p>Under <em>Name</em> digit “APRIORA repository” (or whatever you prefer)</p></li>
+<li><p>Under <em>URL</em> insert:
+<a class="reference external" href="https://cridrive66.github.io/APRIORA-rep/plugin.xml">https://cridrive66.github.io/APRIORA-rep/plugin.xml</a></p></li>
+<li><p>Click on <em>OK</em></p></li>
+</ol>
+<img alt="_images/Repository_1.png" src="_images/Repository_1.png" />
+<ol class="arabic simple" start="5">
+<li><p>Check if the <em>Status</em> of the repository is <strong>connected</strong></p></li>
+</ol>
+<img alt="_images/Repository_2.png" src="_images/Repository_2.png" />
+</section>
+</section>
+<section id="flow-estimation">
+<h2>Flow Estimation<a class="headerlink" href="#flow-estimation" title="Link to this heading"></a></h2>
+<p>The <em>Flow Estimation</em> provides an estimation of yearly mean flow and yearly mean low fow for each subcatchment or
+river section within a specified catchment area. This estimation is made by <strong>Random Forest</strong> (insert link), which
+uses the catchment’s geographical characteristics as predictors and water flow data collected from gauging stations
+to calibrate and validate the approach.</p>
+<p>This group of tools is divided 4 different processes:</p>
+<ul class="simple">
+<li><p>Fix River Network</p></li>
+<li><p>Contributing Area</p></li>
+<li><p>Calculate Geofactors</p></li>
+<li><p>Flow Estimation</p></li>
+</ul>
+<section id="fix-river-network">
+<h3>Fix River Network<a class="headerlink" href="#fix-river-network" title="Link to this heading"></a></h3>
+<p>Here we discuss what the Fix River Network is about.</p>
+<section id="importance-of-net-id-and-net-to">
+<h4>Importance of NET_ID and NET_TO<a class="headerlink" href="#importance-of-net-id-and-net-to" title="Link to this heading"></a></h4>
+<p>NET_ID and NET_TO are very important because they explain the relationship of the river network.</p>
+</section>
+<section id="non-aligned-river-sections">
+<h4>Non-aligned river sections<a class="headerlink" href="#non-aligned-river-sections" title="Link to this heading"></a></h4>
+<p>It can happen that there is a misalignment between the river sections and the subcatchments. Here we fix it.</p>
+<section id="why-to-fix-it">
+<h5>Why to fix it?<a class="headerlink" href="#why-to-fix-it" title="Link to this heading"></a></h5>
+<p>We fix it because otherwise the model struggle to understand where the water is flowing and it can cause errors or over/under estimation during the flow model.</p>
+</section>
+</section>
+</section>
+<section id="contributing-area">
+<h3>Contributing Area<a class="headerlink" href="#contributing-area" title="Link to this heading"></a></h3>
+<p>We have gauging stations and we want to calculate their contributing area.</p>
+<section id="how-to-do-it">
+<h4>How to do it?<a class="headerlink" href="#how-to-do-it" title="Link to this heading"></a></h4>
+<p>We do it using it a nice algorithm.</p>
+</section>
+</section>
+<section id="calculate-geofactors">
+<h3>Calculate Geofactors<a class="headerlink" href="#calculate-geofactors" title="Link to this heading"></a></h3>
+<p>The geofactors are very important for the model. They are the predictors of the model and they are describing certain characteristics of the subcatchments.</p>
+</section>
+<section id="id1">
+<h3>Flow Estimation<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<p>This is the last part of the model where we estimate the flow.</p>
+<section id="random-forest-regressor">
+<h4>Random Forest Regressor<a class="headerlink" href="#random-forest-regressor" title="Link to this heading"></a></h4>
+<p>This is the model used for estimating the flow.</p>
+</section>
+</section>
+</section>
+<section id="api-emission">
+<h2>API Emission<a class="headerlink" href="#api-emission" title="Link to this heading"></a></h2>
+<p>This part is divided in 3 different tools:</p>
+<ul class="simple">
+<li><p>Emission Loads.</p></li>
+<li><p>Accumulation.</p></li>
+<li><p>Risk Assessment.</p></li>
+</ul>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Cristiano Guidi.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
