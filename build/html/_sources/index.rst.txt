@@ -7,13 +7,18 @@
 APRIORA plugin manual (v.0.6)
 *******************************************
 
+.. toctree::
+   :maxdepth: 3
+   :caption: Contents:
+
+
 Add your content using ``reStructuredText`` syntax. See the
 `reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
 documentation for details.
 
 | *italic*  
 | **bold**  
-| ***bold and italic***  
+| ``code samples``  
 
 The *APRIORA* plugin is a QGIS tool divided in two groups:
 
@@ -23,6 +28,8 @@ The *APRIORA* plugin is a QGIS tool divided in two groups:
 The first set of tools is designed to estimate flow in normal and low condition in a catchment, while the
 second one calculate concentration of different Active Pharmaceutical Ingredients (APIs) and perform the 
 risk assessment in each river section.
+
+For more information, check the `project website <https://interreg-baltic.eu/project/apriora/>`_.
 
 Installation for Windows
 ========================
@@ -49,8 +56,7 @@ After succesfully installed "scikit-learn", you can open QGIS and go to *Plugins
 
 1. Go to *Settings* and click on *Add...*
 2. Under *Name* digit "APRIORA repository" (or whatever you prefer)
-3. Under *URL* insert:
-   https://cridrive66.github.io/APRIORA-rep/plugin.xml
+3. Under *URL* insert ``https://cridrive66.github.io/APRIORA-rep/plugin.xml``
 4. Click on *OK*
 
 .. image:: images/Repository_1.png
@@ -137,9 +143,4 @@ This part is divided in 3 different tools:
 * Accumulation.
 * Risk Assessment.
 
-
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
 
