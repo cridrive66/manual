@@ -1,0 +1,178 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flow Estimation &mdash; APRIORA plugin manual  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="API Emission" href="API_emission.html" />
+    <link rel="prev" title="Installation for Windows" href="Installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            APRIORA plugin manual
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Content</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation for Windows</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Flow Estimation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#fix-river-network">Fix River Network</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#importance-of-net-id-and-net-to">Importance of NET_ID and NET_TO</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#non-aligned-river-sections">Non-aligned river sections</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#why-to-fix-it">Why to fix it?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#contributing-area">Contributing Area</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-do-it">How to do it?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#calculate-geofactors">Calculate Geofactors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">Flow Estimation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#random-forest-regressor">Random Forest Regressor</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="API_emission.html">API Emission</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">APRIORA plugin manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Flow Estimation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Flow_Estimation.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="flow-estimation">
+<span id="id1"></span><h1>Flow Estimation<a class="headerlink" href="#flow-estimation" title="Link to this heading"></a></h1>
+<p>The <em>Flow Estimation</em> provides an estimation of yearly mean flow and yearly mean low fow for each subcatchment or
+river section within a specified catchment area. This estimation is made by <strong>Random Forest</strong> (insert link), which
+uses the catchment’s geographical characteristics as predictors and water flow data collected from gauging stations
+to calibrate and validate the approach.</p>
+<p>This group of tools is divided 4 different processes:</p>
+<ul class="simple">
+<li><p>Fix River Network</p></li>
+<li><p>Contributing Area</p></li>
+<li><p>Calculate Geofactors</p></li>
+<li><p>Flow Estimation</p></li>
+</ul>
+<section id="fix-river-network">
+<h2>Fix River Network<a class="headerlink" href="#fix-river-network" title="Link to this heading"></a></h2>
+<p>Here we discuss what the Fix River Network is about.</p>
+<section id="importance-of-net-id-and-net-to">
+<h3>Importance of NET_ID and NET_TO<a class="headerlink" href="#importance-of-net-id-and-net-to" title="Link to this heading"></a></h3>
+<p>NET_ID and NET_TO are very important because they explain the relationship of the river network.</p>
+</section>
+<section id="non-aligned-river-sections">
+<h3>Non-aligned river sections<a class="headerlink" href="#non-aligned-river-sections" title="Link to this heading"></a></h3>
+<p>It can happen that there is a misalignment between the river sections and the subcatchments. Here we fix it.</p>
+<section id="why-to-fix-it">
+<h4>Why to fix it?<a class="headerlink" href="#why-to-fix-it" title="Link to this heading"></a></h4>
+<p>We fix it because otherwise the model struggle to understand where the water is flowing and it can cause errors or over/under estimation during the flow model.</p>
+</section>
+</section>
+</section>
+<section id="contributing-area">
+<h2>Contributing Area<a class="headerlink" href="#contributing-area" title="Link to this heading"></a></h2>
+<p>We have gauging stations and we want to calculate their contributing area.</p>
+<section id="how-to-do-it">
+<h3>How to do it?<a class="headerlink" href="#how-to-do-it" title="Link to this heading"></a></h3>
+<p>We do it using it a nice algorithm.</p>
+</section>
+</section>
+<section id="calculate-geofactors">
+<h2>Calculate Geofactors<a class="headerlink" href="#calculate-geofactors" title="Link to this heading"></a></h2>
+<p>The geofactors are very important for the model. They are the predictors of the model and they are describing certain characteristics of the subcatchments.</p>
+</section>
+<section id="id2">
+<h2>Flow Estimation<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p>This is the last part of the model where we estimate the flow.</p>
+<section id="random-forest-regressor">
+<h3>Random Forest Regressor<a class="headerlink" href="#random-forest-regressor" title="Link to this heading"></a></h3>
+<p>This is the model used for estimating the flow.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Installation.html" class="btn btn-neutral float-left" title="Installation for Windows" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="API_emission.html" class="btn btn-neutral float-right" title="API Emission" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Cristiano Guidi.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
