@@ -47,7 +47,8 @@
 <li class="toctree-l1"><a class="reference internal" href="Introduction.html">Introduction</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Installation for Windows</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#extra-library-required">Extra library required</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#add-a-local-repository-to-qgis">Add a local repository to QGIS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation-via-local-repository">Installation via local repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation-via-zip-file">Installation via .zip file</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Flow_Estimation.html">Flow Estimation</a></li>
@@ -85,10 +86,9 @@
 <h2>Extra library required<a class="headerlink" href="#extra-library-required" title="Link to this heading"></a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>An extra library is required</p>
+<p>To run the plugin, you will need to download an extra library called <strong>scikit-learn</strong> (insert link) which is not included in the standard QGIS installation.</p>
 </div>
-<p>To run the plugin, you will need to download an extra library called “scikit-learn” (insert link) which is not included in the standard QGIS installation.
-To install the missing package, follow these steps:</p>
+<p>To install the missing package, follow these steps:</p>
 <ol class="arabic">
 <li><p>Open “OSGeo4W Shell”, you can find it already installed with QGIS.</p></li>
 <li><p>Digit:</p>
@@ -100,8 +100,8 @@ To install the missing package, follow these steps:</p>
 </ol>
 <p>If you encounter errors, check the <a class="reference internal" href="Troubleshooting.html#troubleshooting"><span class="std std-ref">Troubleshooting</span></a> section.</p>
 </section>
-<section id="add-a-local-repository-to-qgis">
-<h2>Add a local repository to QGIS<a class="headerlink" href="#add-a-local-repository-to-qgis" title="Link to this heading"></a></h2>
+<section id="installation-via-local-repository">
+<h2>Installation via local repository<a class="headerlink" href="#installation-via-local-repository" title="Link to this heading"></a></h2>
 <p>After succesfully installed “scikit-learn”, you can open QGIS and go to <em>Plugins</em> –&gt; <em>Manage and Install Plugins</em>.</p>
 <img alt="_images/Picture1.png" src="_images/Picture1.png" />
 <ol class="arabic simple">
@@ -115,6 +115,17 @@ To install the missing package, follow these steps:</p>
 <li><p>Check if the <em>Status</em> of the repository is <strong>connected</strong></p></li>
 </ol>
 <img alt="_images/Repository_2.png" src="_images/Repository_2.png" />
+</section>
+<section id="installation-via-zip-file">
+<h2>Installation via .zip file<a class="headerlink" href="#installation-via-zip-file" title="Link to this heading"></a></h2>
+<p>The plugin can also be installed by downloading the .zip file from the Github repository (insert link).
+In order to do this:</p>
+<ol class="arabic simple">
+<li><p>Download the .zip file from Github</p></li>
+<li><p>Open QGIS and go to <em>Plugins</em> –&gt; <em>Manage and Install Plugins</em></p></li>
+<li><p>Go to <em>Install from ZIP file</em> and select the .zip folder previously downloaded</p></li>
+<li><p>Click on <em>Install Plugin</em></p></li>
+</ol>
 </section>
 </section>
 

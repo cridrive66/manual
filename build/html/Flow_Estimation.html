@@ -49,10 +49,8 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Flow Estimation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#fix-river-network">Fix River Network</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#importance-of-net-id-and-net-to">Importance of NET_ID and NET_TO</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#non-aligned-river-sections">Non-aligned river sections</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#why-to-fix-it">Why to fix it?</a></li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="#non-aligned-river-sections">Non-aligned river sections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#workflow">Workflow</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#contributing-area">Contributing Area</a><ul>
@@ -67,6 +65,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="API_emission.html">API Emission</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Troubleshooting.html">Troubleshooting</a></li>
 </ul>
 
         </div>
@@ -106,20 +105,52 @@ to calibrate and validate the approach.</p>
 <li><p>Calculate Geofactors</p></li>
 <li><p>Flow Estimation</p></li>
 </ul>
+<p><strong>insert plugin scheme</strong></p>
 <section id="fix-river-network">
 <h2>Fix River Network<a class="headerlink" href="#fix-river-network" title="Link to this heading"></a></h2>
-<p>Here we discuss what the Fix River Network is about.</p>
+<p>Understanding the flow direction (where the water is going and which other river section it contributes to) is a critical aspect of the river network.
+This information is very important for calculating the flow of each river section and determining accumulated values.
+Also, in many cases the intersection between the river network and the subcatchments is not perfectly aligned. This misalignment can cause issue in later
+steps of the plugin, so better fix the input beforehand!</p>
+<p>This algorithm was developed from the plugin <em>WaterNetAnalyzer</em> by Jannik Schilling (insert link).</p>
 <section id="importance-of-net-id-and-net-to">
 <h3>Importance of NET_ID and NET_TO<a class="headerlink" href="#importance-of-net-id-and-net-to" title="Link to this heading"></a></h3>
 <p>NET_ID and NET_TO are very important because they explain the relationship of the river network.</p>
 </section>
 <section id="non-aligned-river-sections">
 <h3>Non-aligned river sections<a class="headerlink" href="#non-aligned-river-sections" title="Link to this heading"></a></h3>
-<p>It can happen that there is a misalignment between the river sections and the subcatchments. Here we fix it.</p>
-<section id="why-to-fix-it">
-<h4>Why to fix it?<a class="headerlink" href="#why-to-fix-it" title="Link to this heading"></a></h4>
-<p>We fix it because otherwise the model struggle to understand where the water is flowing and it can cause errors or over/under estimation during the flow model.</p>
+<p>It can happen that there is a misalignment between the river sections and the subcatchments. Here we fix it.
+We fix it because otherwise the model struggle to understand where the water is flowing and it can cause errors or over/under estimation during the flow model.
+.. note:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>If the misalignment is greater than 10 cm, the plugin will not fix it and it is necessary to manually adjust the input file. Check the :ref:`Troubleshooting` section
+for more information about it.
+</pre></div>
+</div>
 </section>
+<section id="workflow">
+<h3>Workflow<a class="headerlink" href="#workflow" title="Link to this heading"></a></h3>
+<p>Input data:</p>
+<ul class="simple">
+<li><p><strong>subcatchments.shp</strong></p></li>
+<li><p><strong>river_network.shp</strong></p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>Add all the input data to the project by clicking on “Layer –&gt; Add Layer –&gt; Add Vector Layer”</p></li>
+<li><p>Go in the Processing Toolbox and look for the <em>APRIORA</em> plugin. Click on <em>Flow estimation</em> and open <em>1 - Fix River Network</em></p></li>
+<li><p>Choose <strong>subcatchments.shp</strong> as input for <em>Catchment areas</em></p></li>
+<li><p>Choose <strong>river_network.shp</strong> as input for <em>River network</em></p></li>
+<li><p>Click on the three dots and click on the outlet point of the river network. The point selected does not have to be exactly on the outlet, just approximately there.</p></li>
+<li><p>Click on <em>Run</em></p></li>
+</ol>
+<img alt="_images/Fix_river_network_1.png" src="_images/Fix_river_network_1.png" />
+<p>Output data:</p>
+<ul class="simple">
+<li><p><strong>fixed_river_network.shp</strong></p></li>
+</ul>
+<p>Two new columns have been added to the attribute table: NET_ID and NET_TO. These columns represent the river network ID of each specific section and the river network ID of
+where the water is going. Before continue, it is important to check if the new colums are populated correctly for all river sections. If any value under NET_TO is unconnected,
+it might be due to the fact that the river sections are not connected with each others. Check the geometry of the unconnected river sections, manually adjust them and re-run the
+tool until there are no unconnected values in the NET_TO column. Important: apply the changes to <strong>river_network.shp</strong> and not to <strong>fixed_river_network.shp</strong>.</p>
 </section>
 </section>
 <section id="contributing-area">

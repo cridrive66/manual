@@ -16,6 +16,7 @@ APRIORA plugin manual (v.0.6)
    Flow_Estimation
    API_emission
    Troubleshooting
+   References
 
 
 Credits
