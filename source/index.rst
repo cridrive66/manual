@@ -16,9 +16,12 @@ APRIORA plugin manual (v.0.6)
    Flow_Estimation
    API_emission
    Troubleshooting
-   References
 
 
 Credits
 -------
 The project leading to this application has received funding from ...
+
+References
+----------
+Here I write the references.
