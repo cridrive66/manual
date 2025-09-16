@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=Y:\Dokumente\plugin\manual\read_the_docs
+set VIRTUAL_ENV=C:\Users\guidi\Documents\manual\read_the_docs
 
 if not defined PROMPT set PROMPT=$P$G
 
