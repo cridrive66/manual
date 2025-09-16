@@ -14,6 +14,11 @@ Consumption Selection
 ----------------------
 Tool where you can explore APRIORA's internal database (consumption, removal rates, PNEC) and create custom input values.
 
+.. video:: _static/videos/Consumption_selection.mp4
+    :width: 500
+    :height: 300
+    :controls:
+
 Emission Loads
 --------------
 Here you have WWTPs emission points as input for the tool.

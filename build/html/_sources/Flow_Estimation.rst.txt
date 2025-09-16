@@ -28,24 +28,30 @@ steps of the plugin, so better fix the input beforehand!
 
 This algorithm was developed from the plugin *WaterNetAnalyzer* by Jannik Schilling (insert link).
 
-Importance of NET_ID and NET_TO
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 NET_ID and NET_TO are very important because they explain the relationship of the river network.
 
-Non-aligned river sections
-^^^^^^^^^^^^^^^^^^^^^^^^^^
 It can happen that there is a misalignment between the river sections and the subcatchments. Here we fix it.
 We fix it because otherwise the model struggle to understand where the water is flowing and it can cause errors or over/under estimation during the flow model.
-.. note::
-    If the misalignment is greater than 10 cm, the plugin will not fix it and it is necessary to manually adjust the input file. Check the :ref:`Troubleshooting` section
-    for more information about it.
 
-Workflow
-^^^^^^^^
-Input data:
+**insert picture of river and subcatchments misalignment**
+
+If the misalignment is greater than 10 cm, the plugin will not fix it and it is necessary to manually adjust the input file. Check the :ref:`Troubleshooting` section
+for more information about it.
+
+Input data
+^^^^^^^^^^
+Two input data are necessary for this tool:
 
 * **subcatchments.shp**
 * **river_network.shp**
+
+The **subcatchments.shp** is a polygon shapefile that describes the division of the catchment in water basins.
+The **river_network.shp** is a line shapefile that represents the river network within the catchment. It is important that all the sections are connected
+to each others without gaps. It is also required a precise alignment between the river network and the subcatchments (like already explained above).
+
+
+Workflow
+^^^^^^^^
 
 1. Add all the input data to the project by clicking on "Layer --> Add Layer --> Add Vector Layer"
 2. Go in the Processing Toolbox and look for the *APRIORA* plugin. Click on *Flow estimation* and open *1 - Fix River Network*
