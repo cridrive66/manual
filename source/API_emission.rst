@@ -14,18 +14,25 @@ Consumption Selection
 ----------------------
 Tool where you can explore APRIORA's internal database (consumption, removal rates, PNEC) and create custom input values.
 
-.. video:: _static/videos/Consumption_selection.mp4
-    :width: 500
-    :height: 300
-    :controls:
+.. video:: _static/Consumption_selection.mp4
+    :width: 700
+    :height: 370
 
 Emission Loads
 --------------
 Here you have WWTPs emission points as input for the tool.
 
+.. video:: _static/Emission_load.mp4
+    :width: 700
+    :height: 370
+
 Accumulation
 ------------
 Calculate concentration of the selected APIs.
+
+.. video:: _static/Accumulation.mp4
+    :width: 700
+    :height: 370
 
 Risk Assessment
 ---------------
