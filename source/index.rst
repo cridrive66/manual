@@ -7,6 +7,9 @@
 APRIORA plugin manual (v.0.6)
 *******************************************
 
+.. important::
+   This version of the manual is still under writing. 
+
 .. toctree::
    :maxdepth: 3
    :caption: Content
@@ -21,7 +24,3 @@ APRIORA plugin manual (v.0.6)
 Credits
 -------
 The project leading to this application has received funding from ...
-
-References
-----------
-Here I write the references.

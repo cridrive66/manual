@@ -48,8 +48,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation for Windows</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Flow Estimation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#fix-river-network">Fix River Network</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#importance-of-net-id-and-net-to">Importance of NET_ID and NET_TO</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#non-aligned-river-sections">Non-aligned river sections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#input-data">Input data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#workflow">Workflow</a></li>
 </ul>
 </li>
@@ -113,27 +112,25 @@ This information is very important for calculating the flow of each river sectio
 Also, in many cases the intersection between the river network and the subcatchments is not perfectly aligned. This misalignment can cause issue in later
 steps of the plugin, so better fix the input beforehand!</p>
 <p>This algorithm was developed from the plugin <em>WaterNetAnalyzer</em> by Jannik Schilling (insert link).</p>
-<section id="importance-of-net-id-and-net-to">
-<h3>Importance of NET_ID and NET_TO<a class="headerlink" href="#importance-of-net-id-and-net-to" title="Link to this heading"></a></h3>
 <p>NET_ID and NET_TO are very important because they explain the relationship of the river network.</p>
-</section>
-<section id="non-aligned-river-sections">
-<h3>Non-aligned river sections<a class="headerlink" href="#non-aligned-river-sections" title="Link to this heading"></a></h3>
 <p>It can happen that there is a misalignment between the river sections and the subcatchments. Here we fix it.
-We fix it because otherwise the model struggle to understand where the water is flowing and it can cause errors or over/under estimation during the flow model.
-.. note:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>If the misalignment is greater than 10 cm, the plugin will not fix it and it is necessary to manually adjust the input file. Check the :ref:`Troubleshooting` section
-for more information about it.
-</pre></div>
-</div>
-</section>
-<section id="workflow">
-<h3>Workflow<a class="headerlink" href="#workflow" title="Link to this heading"></a></h3>
-<p>Input data:</p>
+We fix it because otherwise the model struggle to understand where the water is flowing and it can cause errors or over/under estimation during the flow model.</p>
+<p><strong>insert picture of river and subcatchments misalignment</strong></p>
+<p>If the misalignment is greater than 10 cm, the plugin will not fix it and it is necessary to manually adjust the input file. Check the <a class="reference internal" href="Troubleshooting.html#troubleshooting"><span class="std std-ref">Troubleshooting</span></a> section
+for more information about it.</p>
+<section id="input-data">
+<h3>Input data<a class="headerlink" href="#input-data" title="Link to this heading"></a></h3>
+<p>Two input data are necessary for this tool:</p>
 <ul class="simple">
 <li><p><strong>subcatchments.shp</strong></p></li>
 <li><p><strong>river_network.shp</strong></p></li>
 </ul>
+<p>The <strong>subcatchments.shp</strong> is a polygon shapefile that describes the division of the catchment in water basins.
+The <strong>river_network.shp</strong> is a line shapefile that represents the river network within the catchment. It is important that all the sections are connected
+to each others without gaps. It is also required a precise alignment between the river network and the subcatchments (like already explained above).</p>
+</section>
+<section id="workflow">
+<h3>Workflow<a class="headerlink" href="#workflow" title="Link to this heading"></a></h3>
 <ol class="arabic simple">
 <li><p>Add all the input data to the project by clicking on “Layer –&gt; Add Layer –&gt; Add Vector Layer”</p></li>
 <li><p>Go in the Processing Toolbox and look for the <em>APRIORA</em> plugin. Click on <em>Flow estimation</em> and open <em>1 - Fix River Network</em></p></li>
