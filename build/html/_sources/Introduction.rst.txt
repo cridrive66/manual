@@ -7,12 +7,12 @@ The *APRIORA* plugin is a QGIS tool divided in two groups:
 * :ref:`Flow_Estimation`
 * :ref:`API_Emission`
 
-The first set of tools is designed to estimate flow in normal and low condition in a catchment, while the
+The first group of tools is designed to estimate flow in normal and low condition in a catchment, while the
 second one calculate concentration of different Active Pharmaceutical Ingredients (APIs) and perform the 
 risk assessment in each river section.
 
 
-**insert here a scheme of the plugin**
+.. image:: images/poster_scheme_big.svg
 
 
 For more information, check the `project website <https://interreg-baltic.eu/project/apriora/>`_.
