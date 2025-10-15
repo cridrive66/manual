@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 *******************************************
-APRIORA plugin manual (v.0.6.3)
+APRIORA plugin manual (v.0.6.4)
 *******************************************
 
 .. important::
