@@ -38,6 +38,7 @@ Latest changhes
 ---------------
 This section contains the most recent changes and updates to the plugin.
 
+* v.0.6.4: Fixed error: Feature (3) from “subcatchment_layer_copy” has invalid geometry.
 * v.0.6.3: Fixed error: object has no attribute 'parameterAsStrings'.
 * v.0.6.2: Fixed typo in *Consumption Selection* tool.
 * v.0.6.1: Fixed connection between PNEC custom table and *Risk assessment* tool.
