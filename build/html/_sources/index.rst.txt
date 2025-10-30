@@ -4,14 +4,14 @@
    contain the root `toctree` directive.
 
 *******************************************
-APRIORA plugin manual (v.0.6.1)
+APRIORA plugin manual (v.0.6.4)
 *******************************************
 
 .. important::
    This version of the manual is still under writing. 
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
    :caption: Content
    
    Introduction

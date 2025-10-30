@@ -6,7 +6,7 @@ Installation for Windows
 Extra library required
 ----------------------
 .. note::
-      To run the plugin, you will need to download an extra library called **scikit-learn** (insert link) which is not included in the standard QGIS installation.
+      To run the plugin, you will need to download an extra library called **scikit-learn** (`source <https://scikit-learn.org/stable/>`_) which is not included in the standard QGIS installation.
 
 To install the missing package, follow these steps:
 

@@ -11,7 +11,7 @@ APRIORA plugin manual (v.0.6.4)
    This version of the manual is still under writing. 
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
    :caption: Content
    
    Introduction

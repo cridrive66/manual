@@ -14,12 +14,14 @@ author = 'Cristiano Guidi'
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = [
-    'sphinxcontrib.video'
+    'sphinxcontrib.video',
+    'sphinx.ext.mathjax'
 ]
 
 templates_path = ['_templates']
 exclude_patterns = []
-
+math_numfig = True # for equation numbering
+numfig = True # for figure/table numbering
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -28,3 +30,4 @@ exclude_patterns = []
 html_theme = 'sphinx_rtd_theme'
 # html_logo = 'images/icon.png'
 html_static_path = ['_static']
+html_css_files = ["css/custom.css"]

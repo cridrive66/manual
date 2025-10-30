@@ -9,6 +9,7 @@
   <title>Flow Estimation &mdash; APRIORA plugin manual  documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=1f9ce7ab" />
 
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
@@ -53,16 +54,16 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#contributing-area-of-gauging-station">Contributing Area of Gauging Station</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id2">Input data</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">Workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Input data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Workflow</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#calculate-geofactors">Calculate Geofactors</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id4">Input data</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">Workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">Input data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">Workflow</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id6">Flow Estimation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id7">Flow Estimation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#random-forest-regressor">Random Forest Regressor</a></li>
 </ul>
 </li>
@@ -99,10 +100,10 @@
   <section id="flow-estimation">
 <span id="id1"></span><h1>Flow Estimation<a class="headerlink" href="#flow-estimation" title="Link to this heading"></a></h1>
 <p>The <em>Flow Estimation</em> provides an estimation of yearly mean flow and yearly mean low fow for each subcatchment or
-river section within a specified catchment area. This estimation is made by <strong>Random Forest</strong> (insert link), which
+river section within a specified catchment area. This estimation is made by <strong>Random Forest</strong> (<a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html">source</a>), which
 uses the catchment’s geographical characteristics as predictors and water flow data collected from gauging stations
 to calibrate and validate the approach.</p>
-<p>This group of tools is divided 4 different processes:</p>
+<p>This group of tools is divided in 4 different processes:</p>
 <ul class="simple">
 <li><p>Fix River Network</p></li>
 <li><p>Contributing Area</p></li>
@@ -116,7 +117,7 @@ to calibrate and validate the approach.</p>
 This information is very important for calculating the flow of each river section and determining accumulated values.
 Also, in many cases the intersection between the river network and the subcatchments is not perfectly aligned. This misalignment can cause issue in later
 steps of the plugin, so better fix the input beforehand!</p>
-<p>This algorithm was developed from the plugin <em>WaterNetAnalyzer</em> by Jannik Schilling (insert link).</p>
+<p>This algorithm was developed from the plugin <em>WaterNetAnalyzer</em> by Jannik Schilling (<a class="reference external" href="https://github.com/Jannik-Schilling/WaterNetAnalyzer">source</a>).</p>
 <p>NET_ID and NET_TO are very important because they explain the relationship of the river network.</p>
 <p>It can happen that there is a misalignment between the river sections and the subcatchments. Here we fix it.
 We fix it because otherwise the model struggle to understand where the water is flowing and it can cause errors or over/under estimation during the flow model.</p>
@@ -163,8 +164,8 @@ tool until there are no <em>unconnected</em> values in the NET_TO column. Import
 <p>Every gauging station measures the flow of a river. However, to understand the flow dynamics, we need to determine the area contributing to each gauging station.
 This tool allows us to calculate the area upstream each gauging station, which we will use in a later step of the plugin. In case we have more than one gauging
 station within the catchment, the tool will generate a single output file where the contributing areas overlap.</p>
-<section id="id2">
-<h3>Input data<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<section id="id3">
+<h3>Input data<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p><strong>subcatchments.shp</strong></p></li>
 <li><p><strong>fixed_river_network.shp</strong> (from <em>Fix River Network</em>)</p></li>
@@ -174,8 +175,8 @@ station within the catchment, the tool will generate a single output file where 
 gauging stations within the catchment. Beside the basic information (like ID, coordinates, etc.), it should contain two columns related to <em>Mean Flow</em>
 and <em>Mean Low Flow</em> calculated at the gauging station. The two average values should be calculated over a certain time series (e.g., 1991 - 2020).
 In Table 1, you can see an example of the <strong>gauging_stations.shp</strong>.</p>
-<table class="docutils align-default" id="id7">
-<caption><span class="caption-text">Gauging stations example.</span><a class="headerlink" href="#id7" title="Link to this table"></a></caption>
+<table class="docutils align-default" id="id8">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Gauging stations example.</span><a class="headerlink" href="#id8" title="Link to this table"></a></caption>
 <colgroup>
 <col style="width: 26.3%" />
 <col style="width: 31.6%" />
@@ -218,8 +219,8 @@ In Table 1, you can see an example of the <strong>gauging_stations.shp</strong>.
 </tbody>
 </table>
 </section>
-<section id="id3">
-<h3>Workflow<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<section id="id4">
+<h3>Workflow<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
 <ol class="arabic simple">
 <li><p>Add all the input data to the project by clicking on “Layer –&gt; Add Layer –&gt; Add Vector Layer”</p></li>
 <li><p>Go in the Processing Toolbox and look for the <em>APRIORA</em> plugin. Click on <em>Flow estimation</em> and open <em>2 - Contributing Area of Gauging Station</em></p></li>
@@ -248,8 +249,8 @@ and river section, making it easier to link subcatchments with their correspondi
 relationship between model parameters and subcatchment geofactors. This relationship is used to predict the morel parameters of ungauged subcatchments and estimate
 their water flow. The geofactors are physical and hydrological chatacteristics of subcatchments, such as area, slope or land use, that influence water flow.
 In this tool we use certain input data to calculate the geofactors related to each subcatchment.</p>
-<section id="id4">
-<h3>Input data<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<section id="id5">
+<h3>Input data<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p><strong>gauged_subcatchments.shp</strong> (from <em>Contributing Area of Gauging Station</em>)</p></li>
 <li><p><strong>ungauged_subcatchments.shp</strong> (from <em>Contributing Area of Gauging Station</em>)</p></li>
@@ -266,12 +267,12 @@ that can be stored as several .nc files in a folder or as a unique raster file. 
 selected for the flow at the gauging stations.</p>
 <p><strong>insert a table of where we can find the data</strong></p>
 </section>
-<section id="id5">
-<h3>Workflow<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
-</section>
-</section>
 <section id="id6">
-<h2>Flow Estimation<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
+<h3>Workflow<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
+</section>
+</section>
+<section id="id7">
+<h2>Flow Estimation<a class="headerlink" href="#id7" title="Link to this heading"></a></h2>
 <p>This is the last part of the model where we estimate the flow.</p>
 <section id="random-forest-regressor">
 <h3>Random Forest Regressor<a class="headerlink" href="#random-forest-regressor" title="Link to this heading"></a></h3>

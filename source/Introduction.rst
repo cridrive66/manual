@@ -28,11 +28,12 @@ Please contribute using **Github (insert link)**. Create a branch, add commits a
 
 Reporting bugs
 ^^^^^^^^^^^^^^
-If you find a bug in APRIORA plugin, please open a new issue (insert link) and tag it "bug".
+If you find a bug in APRIORA plugin, please open a new issue (insert link) and tag it "bug", or send an email to cristiano.guidi2@uni-rostock.de.
 
 Suggesting improvements
 ^^^^^^^^^^^^^^^^^^^^^^^
-If you want to suggest a new feature or an improvement of a current feature, you can submit this on the issue tracker (insert link) and tag it "improvement".
+If you want to suggest a new feature or an improvement of a current feature, you can submit this on the issue tracker (insert link) and tag it "improvement",
+or send an email to cristiano.guidi2@uni-rostock.de.
 
 Latest changhes
 ---------------
