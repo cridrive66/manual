@@ -66,8 +66,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#risk-assessment">Risk Assessment</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id10">Input data</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id11">Workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">Input data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id14">Workflow</a></li>
 </ul>
 </li>
 </ul>
@@ -130,16 +130,15 @@ in the <strong>Workflow</strong> section below.</p>
 <div class="line"><strong>Consumption data</strong></div>
 <div class="line">Here the user can explore the consumption data related to several substances, with different spatial and temporal coverage. The consumption data is expressed in
 <em>mg/inh./a</em> and it is already including the excretion rate from the human body. When a regional coverage is not available, it is marked as “-” and the national
-value is considered instead.</div>
-<div class="line">The consumption values are calculated with the formula <a class="reference internal" href="#equation-consumption-equation">(1)</a>:</div>
+value is considered instead. The consumption values are calculated with the formula <a class="reference internal" href="#equation-consumption-equation">(1)</a>:</div>
 </div>
 <div class="math notranslate nohighlight" id="equation-consumption-equation">
 <span class="eqno">(1)<a class="headerlink" href="#equation-consumption-equation" title="Link to this equation"></a></span>\[m_{i,y} = ((m_{cp,y} + m_{cs,y}) \cdot e)/n_{pop}\]</div>
 <p>With:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(m_{i,y}\)</span> = yearly consumption of y API [mg/inh/a]</p></li>
-<li><p><span class="math notranslate nohighlight">\(m_{cp,y}\)</span> = yearly prescribed API intake [kg/a]</p></li>
-<li><p><span class="math notranslate nohighlight">\(m_{cs,y}\)</span> = yearly sold over-the-counter API intake [kg/a]</p></li>
+<li><p><span class="math notranslate nohighlight">\(m_{i,y}\)</span> = yearly consumption of y API [<span class="math notranslate nohighlight">\(mg/inh/a\)</span>]</p></li>
+<li><p><span class="math notranslate nohighlight">\(m_{cp,y}\)</span> = yearly prescribed API intake [<span class="math notranslate nohighlight">\(kg/a\)</span>]</p></li>
+<li><p><span class="math notranslate nohighlight">\(m_{cs,y}\)</span> = yearly sold over-the-counter API intake [<span class="math notranslate nohighlight">\(kg/a\)</span>]</p></li>
 <li><p><span class="math notranslate nohighlight">\(e\)</span> = API specific excretion rate [-]</p></li>
 <li><p><span class="math notranslate nohighlight">\(n_{pop}\)</span> = population in the reference area for intake data  [-]</p></li>
 </ul>
@@ -230,42 +229,291 @@ technical class (number from 1 to 4).</p>
 </section>
 <section id="emission-loads">
 <span id="id3"></span><h2>Emission Loads<a class="headerlink" href="#emission-loads" title="Link to this heading"></a></h2>
-<p>This tool calculates the load of previously selected APIs at each WWTP within a catchmment. The load is calculated according to the formula <a class="reference internal" href="#equation-load-equation">(2)</a>:</p>
+<p>This tool calculates the load of previously selected APIs at each WWTP within a catchmment.
+The load is calculated according to the formula <a class="reference internal" href="#equation-load-equation">(2)</a>:</p>
 <div class="math notranslate nohighlight" id="equation-load-equation">
 <span class="eqno">(2)<a class="headerlink" href="#equation-load-equation" title="Link to this equation"></a></span>\[m_{WW,eff} = i_{WWTP} \cdot m_{i,y} \cdot (1 - r_{WWTP}) / 1000\]</div>
 <p>With:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(m_{WW,eff}\)</span> = load [kg/a]</p></li>
-<li><p><span class="math notranslate nohighlight">\(i_{WWTP}\)</span> = connected inhabitants [inh]</p></li>
-<li><p><span class="math notranslate nohighlight">\(m_{i,y}\)</span> = yearly consumption of y API [mg/inh/a]</p></li>
+<li><p><span class="math notranslate nohighlight">\(m_{WW,eff}\)</span> = load [<span class="math notranslate nohighlight">\(kg/a\)</span>]</p></li>
+<li><p><span class="math notranslate nohighlight">\(i_{WWTP}\)</span> = connected inhabitants [<span class="math notranslate nohighlight">\(inh\)</span>]</p></li>
+<li><p><span class="math notranslate nohighlight">\(m_{i,y}\)</span> = yearly consumption of y API [<span class="math notranslate nohighlight">\(mg/inh/a\)</span>]</p></li>
 <li><p><span class="math notranslate nohighlight">\(r_{WWTP}\)</span> = removal rate  [-]</p></li>
 </ul>
+<p>The plugin retrieves the technical class assigned to each treatmant plant and identifies the corresponding removal rate for each API
+from the data pool. This value (<span class="math notranslate nohighlight">\(r_{WWTP}\)</span>) is then used as input for formula <a class="reference internal" href="#equation-load-equation">(2)</a> to calculate the
+reduced emissions after treatment.</p>
 <section id="id4">
 <h3>Input data<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<p>One input data is necessary for this tool:</p>
+<ul class="simple">
+<li><p><strong>WWTP.shp</strong></p></li>
+</ul>
+<p>The <strong>WWTP.shp</strong> is a point shapefile containing the emission point of the WWTPs as geometry and important information of the facilities in the attribute table. The required
+information are: ID and name of the WWTP; number of connected inhabitant; number representing the type of treatment (1=primary, 2=secondary, 3=tertiary, 4=quaternary). An
+example of these information can be summarized by <a class="reference internal" href="#wwtp-attribute-table"><span class="std std-numref">Table 2</span></a>.</p>
+<span id="wwtp-attribute-table"></span><table class="docutils align-default" id="id15">
+<caption><span class="caption-number">Table 2 </span><span class="caption-text">Example of attribute table with required data for WWTPs.</span><a class="headerlink" href="#id15" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 17.6%" />
+<col style="width: 35.3%" />
+<col style="width: 23.5%" />
+<col style="width: 23.5%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>ID</p></th>
+<th class="head"><p>Name</p></th>
+<th class="head"><p>Connected Inhabitants</p></th>
+<th class="head"><p>Type of treatment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>163</p></td>
+<td><p>KA Vorbeck</p></td>
+<td><p>98</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>202</p></td>
+<td><p>KA Groß Lüsewitz</p></td>
+<td><p>913</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>691</p></td>
+<td><p>KA Schwaan</p></td>
+<td><p>10004</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p>156</p></td>
+<td><p>KA Hanstorf</p></td>
+<td><p>312</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>169</p></td>
+<td><p>KA Güstrow/Parum</p></td>
+<td><p>34333</p></td>
+<td><p>3</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The column “Type of treatment” needs to be a number from 1 to 4.
+The emission point should be within 500 m to the closest river section.</p>
+</div>
 </section>
 <section id="id5">
 <h3>Workflow<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
-<div  class="sphinx-contrib-video-container align-left"><video controls="True" height="370" preload="auto" width="700"><source src="_images/emission_loads.mp4" type="video/mp4"></video></div></section>
+<ol class="arabic simple">
+<li><p>Add the input data to the project by clicking on “Layer -&gt; Add Layer -&gt; Add Vector Layer”</p></li>
+<li><p>Go in the Processing Toolbox and look for the <em>APRIORA</em> plugin. Click on <em>API emission</em> and open <em>5 - Emission Loads</em></p></li>
+<li><p>Choose <strong>WWTP.shp</strong> as input for <em>Emission Points of WWTP</em></p></li>
+<li><p>Select the correct field of <strong>WWTP.shp</strong> for <em>ID</em>, <em>Name</em>, <em>Connected Inhabitants</em> and <em>Technology Class</em></p></li>
+<li><p>If you created a custom table from the <em>Consumption Selection</em> tool, flag the next box, otherwise leave it empty</p></li>
+</ol>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Under <em>Current API Selection</em> you can see the substances previously selected. This window is only displaying the selection, if you want
+to change the selection go back to <a class="reference internal" href="#consumption-selection"><span class="std std-ref">Consumption Selection</span></a>.</p>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Click on <em>Run</em></p></li>
+</ol>
+<div  class="sphinx-contrib-video-container align-left"><video controls="True" height="370" preload="auto" width="700"><source src="_images/Emission_load_1.mp4" type="video/mp4"></video></div><p>Output data:</p>
+<ul class="simple">
+<li><p><strong>emission_loads.shp</strong></p></li>
+</ul>
+<p>The output is a point shapefile with the same geometry as the <strong>WWTP.shp</strong>. The attribute table contains the <em>ID</em> and <em>Name</em> columns from <strong>WWTP.shp</strong> and
+<em>n</em> columns related to the emission load of <em>n</em> selected APIs (e.g., if the user selects 3 APIs, 3 load columns are added). Finally, the load is expressed in <em>kg/a</em>.</p>
+</section>
 </section>
 <section id="accumulation">
 <span id="id6"></span><h2>Accumulation<a class="headerlink" href="#accumulation" title="Link to this heading"></a></h2>
-<p>Calculate concentration of the selected APIs.</p>
+<div class="line-block">
+<div class="line">This tool combine the output of <a class="reference internal" href="Flow_Estimation.html#flow-estimation-tool"><span class="std std-ref">Flow Estimation</span></a> with the output of <a class="reference internal" href="#emission-loads"><span class="std std-ref">Emission Loads</span></a>. In this part, the load of the selected APIs is transferred to
+the river network and the concentration for <em>mean flow</em> and <em>mean low flow</em> condition is calculated.</div>
+<div class="line">In the first step, each emission point is projected onto the closest river section, where a new sub-section is created to integrate the WWTP discharge.
+In the example shown in Fig. xx, three river sections and one WWTP are considered. The emission point is connected to river section 2, which is then divided into 2A
+and 2B. Because flow direction is from section 1 toward section 3, the load is transferred downstream to 2B and 3, while sections 1 and 2A remain unaffected by API inputs.
+From section 2B onward then, the emitted load is accumulated along the river network.</div>
+<div class="line">After splitting, the mean flow and mean low flow of section 2 (the affected section) is proportionally redistributed between 2A and 2B (the new sub-sections) according to
+their relative lengths.</div>
+</div>
+<img alt="_images/accumulation_division.png" src="_images/accumulation_division.png" />
+<p>Once all WWTP emission points have been processed this way, API loads are progressively accumulated downstream along the network. Based on these accumulated loads and the
+flow values stored in the river shapefile, API concentrations are then calculated for each river section with formula <a class="reference internal" href="#equation-accumulation-equation">(3)</a>.
+Two values are derived: concentration under mean flow conditions and concentration under mean low flow conditions.</p>
+<div class="math notranslate nohighlight" id="equation-accumulation-equation">
+<span class="eqno">(3)<a class="headerlink" href="#equation-accumulation-equation" title="Link to this equation"></a></span>\[PEC = \frac{\sum (m_{WW,eff})_{up}}{Q} \cdot k\]</div>
+<p>With:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(PEC\)</span> = Predicted Environmental Concentration [<span class="math notranslate nohighlight">\(ng/L\)</span>]</p></li>
+<li><p><span class="math notranslate nohighlight">\((m_{WW,eff})_{up}\)</span> = load from all the upstream river section [<span class="math notranslate nohighlight">\(kg/a\)</span>]</p></li>
+<li><p><span class="math notranslate nohighlight">\(Q\)</span> = mean flow or mean low flow [<span class="math notranslate nohighlight">\(m^3\!/s\)</span>]</p></li>
+<li><p><span class="math notranslate nohighlight">\(k\)</span> = conversion factor [<span class="math notranslate nohighlight">\(\frac{ng/kg \cdot m^3\!/L}{s/a}\)</span>]</p></li>
+</ul>
 <section id="id7">
 <h3>Input data<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
+<p>Two input data are required for this tool:</p>
+<ul class="simple">
+<li><p><strong>emission_loads.shp</strong></p></li>
+<li><p><strong>river_level.shp</strong></p></li>
+</ul>
+<p>The <strong>emission_loads.shp</strong> is the output of <a class="reference internal" href="#emission-loads"><span class="std std-ref">Emission Loads</span></a> while <strong>river_level.shp</strong> is the output of <a class="reference internal" href="Flow_Estimation.html#flow-estimation-tool"><span class="std std-ref">Flow Estimation</span></a>. In case the user already has
+regionalized flow data, going through the <a class="reference internal" href="Flow_Estimation.html#flow-estimation"><span class="std std-ref">Flow Estimation</span></a> set of tools is not necessary. The important fields that should be in <strong>river_level.shp</strong> are:</p>
+<ul class="simple">
+<li><p>ID field: a column with a unique ID for each river section</p></li>
+<li><p>Next field: a column with the ID of the downstream river section</p></li>
+<li><p>Mean flow: mean flow value for the single river section [<span class="math notranslate nohighlight">\(m^3\!/s\)</span>]</p></li>
+<li><p>Accumulated mean flow: sum of the upstream mean flow values [<span class="math notranslate nohighlight">\(m^3\!/s\)</span>]</p></li>
+<li><p>Mean low flow: mean low flow value for the single river section [<span class="math notranslate nohighlight">\(m^3\!/s\)</span>]</p></li>
+<li><p>Accumulated mean low flow: sum of the upstream mean low flow values [<span class="math notranslate nohighlight">\(m^3\!/s\)</span>]</p></li>
+</ul>
+<p>Regarding <strong>emission_loads.shp</strong>, the emission point should be at maximum 500 m from the closest river section, as stated before. If not, edit the location of the point.</p>
 </section>
 <section id="id8">
 <h3>Workflow<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
-<div  class="sphinx-contrib-video-container align-left"><video controls="True" height="370" preload="auto" width="700"><source src="_images/Accumulation.mp4" type="video/mp4"></video></div></section>
+<ol class="arabic">
+<li><p>Add the input data to the project by clicking on “Layer -&gt; Add Layer -&gt; Add Vector Layer”</p></li>
+<li><p>Go in the Processing Toolbox and look for the <em>APRIORA</em> plugin. Click on <em>API emission</em> and open <em>6 - Accumulation</em></p></li>
+<li><p>Choose <strong>emission_loads.shp</strong> as input for <em>API load</em></p></li>
+<li><p>Select the fields containing the APIs to accumulate. This selection should include only columns containing load of APIs in kg/a.</p></li>
+<li><p>Choose <strong>river_level.shp</strong> as input for <em>River network</em></p></li>
+<li><div class="line-block">
+<div class="line">Select the correct field of <strong>river_level.shp</strong> for <em>ID Field</em>, <em>Next Field</em>, <em>Mean Flow</em>, <em>Acc. Mean Flow</em>, <em>Mean Low Flow</em> and <em>Acc. Mean Low Flow</em>.
+In case <strong>river_level.shp</strong> is the output of <a class="reference internal" href="Flow_Estimation.html#flow-estimation-tool"><span class="std std-ref">Flow Estimation</span></a>, here are the correct fields to select:</div>
+</div>
+<blockquote>
+<div><ul class="simple">
+<li><p><em>ID Field</em> -&gt; NET_ID</p></li>
+<li><p><em>Next Field</em> -&gt; NET_TO</p></li>
+<li><p><em>Mean Flow</em> -&gt; Mean_Flow</p></li>
+<li><p><em>Acc. Mean Flow</em> -&gt; calc_Mean_</p></li>
+<li><p><em>Mean Low Flow</em> -&gt; M_Low_Flow</p></li>
+<li><p><em>Acc. Mean Low Flow</em> -&gt; calc_M_Low</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Click on <em>Run</em></p></li>
+</ol>
+<div  class="sphinx-contrib-video-container align-left"><video controls="True" height="370" preload="auto" width="700"><source src="_images/accumulation_1.mp4" type="video/mp4"></video></div><p>Output data:</p>
+<ul class="simple">
+<li><p><strong>river_accumulation.shp</strong></p></li>
+</ul>
+<p>The output is a line shapefile containing the updated geometry of the river network. Its attribute table contains, for each section, the emitted load, the
+accumulated load and the resulting concentrations under both normal and low-flow condition for each API. <a class="reference internal" href="#accumulation-table"><span class="std std-numref">Table 3</span></a> shows only a part of the attribute table
+for one substance and a few river sections.</p>
+<span id="accumulation-table"></span><table class="docutils align-default" id="id16">
+<caption><span class="caption-number">Table 3 </span><span class="caption-text">Example of attribute table with required data for WWTPs.</span><a class="headerlink" href="#id16" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 16.7%" />
+<col style="width: 16.7%" />
+<col style="width: 16.7%" />
+<col style="width: 16.7%" />
+<col style="width: 16.7%" />
+<col style="width: 16.7%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>NET_ID</p></th>
+<th class="head"><p>NET_TO</p></th>
+<th class="head"><p>Carb[kg/a]</p></th>
+<th class="head"><p>acc_Carb <a class="footnote-reference brackets" href="#f1" id="id9" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></th>
+<th class="head"><p>conc_Carb <a class="footnote-reference brackets" href="#f2" id="id10" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p></th>
+<th class="head"><p>conL_Carb <a class="footnote-reference brackets" href="#f3" id="id11" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1005</p></td>
+<td><p>1006</p></td>
+<td><p>0</p></td>
+<td><p>17.789</p></td>
+<td><p>39.422</p></td>
+<td><p>150.251</p></td>
+</tr>
+<tr class="row-odd"><td><p>1006</p></td>
+<td><p>1007</p></td>
+<td><p>0</p></td>
+<td><p>17.789</p></td>
+<td><p>39.265</p></td>
+<td><p>149.398</p></td>
+</tr>
+<tr class="row-even"><td><p>1007</p></td>
+<td><p>1008A</p></td>
+<td><p>0</p></td>
+<td><p>17.789</p></td>
+<td><p>39.134</p></td>
+<td><p>148.712</p></td>
+</tr>
+<tr class="row-odd"><td><p>1008A</p></td>
+<td><p>1008B</p></td>
+<td><p>0</p></td>
+<td><p>17.789</p></td>
+<td><p>38.615</p></td>
+<td><p>148.277</p></td>
+</tr>
+<tr class="row-even"><td><p>1008B</p></td>
+<td><p>1009</p></td>
+<td><p>3.68</p></td>
+<td><p>21.469</p></td>
+<td><p>41.873</p></td>
+<td><p>168.519</p></td>
+</tr>
+<tr class="row-odd"><td><p>1009</p></td>
+<td><p>1010</p></td>
+<td><p>0</p></td>
+<td><p>21.469</p></td>
+<td><p>41.671</p></td>
+<td><p>167.611</p></td>
+</tr>
+<tr class="row-even"><td><p>1010</p></td>
+<td><p>1011</p></td>
+<td><p>0</p></td>
+<td><p>21.469</p></td>
+<td><p>41.368</p></td>
+<td><p>166.652</p></td>
+</tr>
+<tr class="row-odd"><td><p>1011</p></td>
+<td><p>1012</p></td>
+<td><p>0</p></td>
+<td><p>21.469</p></td>
+<td><p>40.693</p></td>
+<td><p>164.549</p></td>
+</tr>
+</tbody>
+</table>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="f1" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id9">1</a><span class="fn-bracket">]</span></span>
+<p>Accumulation of Carbamazepine [<span class="math notranslate nohighlight">\(kg/a\)</span>]</p>
+</aside>
+<aside class="footnote brackets" id="f2" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id10">2</a><span class="fn-bracket">]</span></span>
+<p>Concentration of Carbamazepine in normal conditions [<span class="math notranslate nohighlight">\(ng/L\)</span>]</p>
+</aside>
+<aside class="footnote brackets" id="f3" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id11">3</a><span class="fn-bracket">]</span></span>
+<p>Concentration of Carbamazepine in low flow conditions [<span class="math notranslate nohighlight">\(ng/L\)</span>]</p>
+</aside>
+</aside>
+</section>
 </section>
 <section id="risk-assessment">
-<span id="id9"></span><h2>Risk Assessment<a class="headerlink" href="#risk-assessment" title="Link to this heading"></a></h2>
-<p>Risk assessment for the selected APIs calculated by a risk coefficient RQ.</p>
-<section id="id10">
-<h3>Input data<a class="headerlink" href="#id10" title="Link to this heading"></a></h3>
+<span id="id12"></span><h2>Risk Assessment<a class="headerlink" href="#risk-assessment" title="Link to this heading"></a></h2>
+<p>This tool calculates the final risk for each river section. So far, only environmental risk assessment (ERA) is considered and can be calculated like
+shown in <a class="reference internal" href="#equation-era-equation">(4)</a>.</p>
+<div class="math notranslate nohighlight" id="equation-era-equation">
+<span class="eqno">(4)<a class="headerlink" href="#equation-era-equation" title="Link to this equation"></a></span>\[ERA = \frac{PEC}{PNEC_{ERA}}\]</div>
+<p>With:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(ERA\)</span> = Environmental Risk Assessment [-]</p></li>
+<li><p><span class="math notranslate nohighlight">\(PEC\)</span> = Predicted Environmental Concentration [<span class="math notranslate nohighlight">\(ng/L\)</span>]</p></li>
+<li><p><span class="math notranslate nohighlight">\(PNEC_{ERA}\)</span> = Predicted No Effect Concentration for ERA [<span class="math notranslate nohighlight">\(ng/L\)</span>]</p></li>
+</ul>
+<section id="id13">
+<h3>Input data<a class="headerlink" href="#id13" title="Link to this heading"></a></h3>
 </section>
-<section id="id11">
-<h3>Workflow<a class="headerlink" href="#id11" title="Link to this heading"></a></h3>
-</section>
+<section id="id14">
+<h3>Workflow<a class="headerlink" href="#id14" title="Link to this heading"></a></h3>
+<div  class="sphinx-contrib-video-container align-left"><video controls="True" height="370" preload="auto" width="700"><source src="_images/risk_assessment.mp4" type="video/mp4"></video></div></section>
 </section>
 </section>
 
