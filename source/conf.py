@@ -14,7 +14,7 @@ author = 'Cristiano Guidi'
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = [
-    'sphinxcontrib.video',
+    'sphinxcontrib.video',  # remove since I will upload every video with .. raw:: html
     'sphinx.ext.mathjax'
 ]
 

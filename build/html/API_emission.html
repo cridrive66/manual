@@ -70,6 +70,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#id14">Workflow</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#dummy-data">Dummy data</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Troubleshooting.html">Troubleshooting</a></li>
@@ -114,9 +115,14 @@ perform the risk assessment in each river section within a catchment.</p>
 <span id="id2"></span><h2>Consumption Selection<a class="headerlink" href="#consumption-selection" title="Link to this heading"></a></h2>
 <p>This tool is giving the user the access to the APRIORA’s internal database related to consumption data, removal rates and PNEC values.
 Since it is not a processing tool, the user cannot find it under the <em>Processing Toolbox</em>. It is displayed instead under <em>Plugins</em> –&gt; <em>Consumption Selection</em> or
-in the Menu Toolbar (see picture below).</p>
-<a class="reference internal image-reference" href="_images/consumption_selection.png"><img alt="_images/consumption_selection.png" src="_images/consumption_selection.png" style="width: 500px; height: 200px;" />
+in the Menu Toolbar (<a class="reference internal" href="#consumption-selection-fig"><span class="std std-numref">Fig. 1</span></a>).</p>
+<figure class="align-default" id="id22">
+<span id="consumption-selection-fig"></span><a class="reference internal image-reference" href="_images/consumption_selection.png"><img alt="_images/consumption_selection.png" src="_images/consumption_selection.png" style="width: 500px; height: 200px;" />
 </a>
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Location of the <em>Consumption Selection</em> tool in the Menu Toolbar.</span><a class="headerlink" href="#id22" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>The tool contains 4 different windows:</p>
 <ul class="simple">
 <li><p>Consumption data</p></li>
@@ -128,9 +134,9 @@ in the Menu Toolbar (see picture below).</p>
 in the <strong>Workflow</strong> section below.</p>
 <div class="line-block">
 <div class="line"><strong>Consumption data</strong></div>
-<div class="line">Here the user can explore the consumption data related to several substances, with different spatial and temporal coverage. The consumption data is expressed in
+<div class="line">Here the user can explore the consumption data related to several substances, with different spatial and temporal coverage (<a class="reference internal" href="#consumption-interface-fig"><span class="std std-numref">Fig. 2</span></a>). The consumption data is expressed in
 <em>mg/inh./a</em> and it is already including the excretion rate from the human body. When a regional coverage is not available, it is marked as “-” and the national
-value is considered instead. The consumption values are calculated with the formula <a class="reference internal" href="#equation-consumption-equation">(1)</a>:</div>
+value is considered instead. The consumption values are calculated with the formula <a class="reference internal" href="#equation-consumption-equation">(1)</a>.</div>
 </div>
 <div class="math notranslate nohighlight" id="equation-consumption-equation">
 <span class="eqno">(1)<a class="headerlink" href="#equation-consumption-equation" title="Link to this equation"></a></span>\[m_{i,y} = ((m_{cp,y} + m_{cs,y}) \cdot e)/n_{pop}\]</div>
@@ -148,31 +154,51 @@ do it by clicking on the “+” icon. A new row is added at the bottom of the t
 year, country and region. The other fields can be kept empty. In case a wrongful substance is added, it is possible to select it and then remove it with the “-” icon. When
 all the changes have been applied, click on the save icon. If the user would like to go back to the core table, simply click on “Restore original”.</div>
 </div>
-<img alt="_images/consumption_interface.png" src="_images/consumption_interface.png" />
+<figure class="align-default" id="id23">
+<span id="consumption-interface-fig"></span><img alt="_images/consumption_interface.png" src="_images/consumption_interface.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Interface of the “Consumption data” window within the Consumption Selection tool.</span><a class="headerlink" href="#id23" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <div class="line-block">
 <div class="line"><strong>Removal rate</strong></div>
-<div class="line">This window contains a table with the removal rates of different APIs for the 4 different types of treatment: TC1 (primary treatment), screening and sedimentation; TC2
+<div class="line">This window (<a class="reference internal" href="#removal-interface-fig"><span class="std std-numref">Fig. 3</span></a>) contains a table with the removal rates of different APIs for the 4 different types of treatment: TC1 (primary treatment), screening and sedimentation; TC2
 (secondary treatment), aeration and bacterial digestion; TC3 (tertiary treatment), nutrient removal, filtration and chlorine/UV; TC4 (quaternary treatment), activated
 carbon and reverse osmosis. This table provides cumulative removal rates for each treatment stage. This means the value for a given stage (e.g., TC3) already includes
 the combined removal efficiency of all previous stages (TC1 and TC2). Therefore the calculation is direct and not sequential.</div>
 <div class="line">With a similar logic like before, the user can add a new substance (or edit the current value) by clicking on the “+” icon. After making a change, remember to click
 on the save icon.</div>
 </div>
-<img alt="_images/removal_interface.png" src="_images/removal_interface.png" />
+<figure class="align-default" id="id24">
+<span id="removal-interface-fig"></span><img alt="_images/removal_interface.png" src="_images/removal_interface.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Interface of the “Removal rate” window within the Consumption Selection tool.</span><a class="headerlink" href="#id24" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <div class="line-block">
 <div class="line"><strong>Custom table</strong></div>
-<div class="line">In case the user would like to further customize the input data like consumption and removal rates at a more detailed level, here it is possible to do it. By selecting the
-WWTPs shapefile and the correct fields for ID, name and technical class, it is possible to display the consumption values and removal rates for each WWTPs included in the
+<div class="line">In case the user would like to further customize the input data like consumption and removal rates at a more detailed level, here it is possible to do it (<a class="reference internal" href="#custom-table-interface-fig"><span class="std std-numref">Fig. 4</span></a>).
+By selecting the WWTPs shapefile and the correct fields for ID, name and technical class, it is possible to display the consumption values and removal rates for each WWTPs included in the
 shapefile. By doing so, the user can edit a consumption values or a removal rate for that specific WWTP. After doing any edit, click on the <em>Save</em> button.</div>
 </div>
-<img alt="_images/custom_table_interface.png" src="_images/custom_table_interface.png" />
+<figure class="align-default" id="id25">
+<span id="custom-table-interface-fig"></span><img alt="_images/custom_table_interface.png" src="_images/custom_table_interface.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Interface of the “Custom table” window within the Consumption Selection tool.</span><a class="headerlink" href="#id25" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <div class="line-block">
 <div class="line"><strong>PNEC values</strong></div>
-<div class="line">This window contains a table with the PNEC values of different APIs expressed in ng/L. With a similar logic like before, the user can add a new substance
+<div class="line">This window (<a class="reference internal" href="#pnec-interface-fig"><span class="std std-numref">Fig. 5</span></a>) contains a table with the PNEC values of different APIs expressed in ng/L. With a similar logic like before, the user can add a new substance
 (or edit the current value) by clicking on the “+” icon. After making a change, remember to click on the save icon.
 As mere information, limit of quantification (LOQ) of two different laboratories are included: Kristianstad University (Sweden) and SYKE (Finland).</div>
 </div>
-<img alt="_images/PNEC_interface.png" src="_images/PNEC_interface.png" />
+<figure class="align-default" id="id26">
+<span id="pnec-interface-fig"></span><img alt="_images/PNEC_interface.png" src="_images/PNEC_interface.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Interface of the “PNEC values” window within the Consumption Selection tool.</span><a class="headerlink" href="#id26" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <section id="input-data">
 <h3>Input data<a class="headerlink" href="#input-data" title="Link to this heading"></a></h3>
 <p>For this tool no input data is required. All the necessary input data (e.g., consumption values, removal rates, PNEC values) are already provided. If the user would like
@@ -201,7 +227,13 @@ technical class (number from 1 to 4).</p>
 <li><p>Add to the selection the newly added API by repeating the steps 3 - 5.</p></li>
 <li><p>Click on “Save selection”</p></li>
 </ol>
-<div  class="sphinx-contrib-video-container align-left"><video controls="True" height="370" preload="auto" width="700"><source src="_images/Consumption_selection_1.mp4" type="video/mp4"></video></div><p><strong>Removal rate</strong></p>
+<figure>
+  <video width="700" height="370" controls>
+    <source src="_static/Consumption_selection_1.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <figcaption>Worflow of <i>Consumption data</i> window within <i>Consumption Selection</i> tool.</figcaption>
+</figure><p><strong>Removal rate</strong></p>
 <ol class="arabic simple">
 <li><p>Go on the “Removal rate” window</p></li>
 <li><p>Check if the values for the different APIs and different technical classes are correct</p></li>
@@ -209,7 +241,13 @@ technical class (number from 1 to 4).</p>
 <li><p>In case you would like to add a new substance, click on the “+” icon and fill out all the fields (“CAS No.” can be kept empty)</p></li>
 <li><p>After all the edits, click on the save icon</p></li>
 </ol>
-<div  class="sphinx-contrib-video-container align-left"><video controls="True" height="370" preload="auto" width="700"><source src="_images/removal_rate.mp4" type="video/mp4"></video></div><p><strong>Custom table</strong></p>
+<figure>
+  <video width="700" height="370" controls>
+    <source src="_static/removal_rate.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <figcaption>Worflow of <i>Removal rate</i> window within <i>Consumption Selection</i> tool.</figcaption>
+</figure><p><strong>Custom table</strong></p>
 <ol class="arabic simple">
 <li><p>Go on the “Custom table” window</p></li>
 <li><p>Select the WWTP shapefile and specify the field for ID, name and technical class. In case you cannot find the shapefile between the available ones, click on the reload button.</p></li>
@@ -217,7 +255,13 @@ technical class (number from 1 to 4).</p>
 <li><p>Check the consumption values and removal rates at each WWTPs. In case you would like to change something, double click on a number and update the value.</p></li>
 <li><p>After all the edits, click on “Save”</p></li>
 </ol>
-<div  class="sphinx-contrib-video-container align-left"><video controls="True" height="370" preload="auto" width="700"><source src="_images/custom_table.mp4" type="video/mp4"></video></div><p><strong>PNEC values</strong></p>
+<figure>
+  <video width="700" height="370" controls>
+    <source src="_static/custom_table.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <figcaption>Worflow of <i>Custom table</i> window within <i>Consumption Selection</i> tool.</figcaption>
+</figure><p><strong>PNEC values</strong></p>
 <ol class="arabic simple">
 <li><p>Go on the “PNEC values” window</p></li>
 <li><p>Check if the values for the different APIs are correct</p></li>
@@ -225,7 +269,13 @@ technical class (number from 1 to 4).</p>
 <li><p>In case you would like to add a new substance, click on the “+” icon and fill out the “PNEC” field (“LOQ” fields can be kept empty)</p></li>
 <li><p>After all the edits, click on the save icon</p></li>
 </ol>
-<div  class="sphinx-contrib-video-container align-left"><video controls="True" height="370" preload="auto" width="700"><source src="_images/PNEC.mp4" type="video/mp4"></video></div></section>
+<figure>
+  <video width="700" height="370" controls>
+    <source src="_static/PNEC.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <figcaption>Worflow of <i>PNEC values</i> window within <i>Consumption Selection</i> tool.</figcaption>
+</figure></section>
 </section>
 <section id="emission-loads">
 <span id="id3"></span><h2>Emission Loads<a class="headerlink" href="#emission-loads" title="Link to this heading"></a></h2>
@@ -252,8 +302,8 @@ reduced emissions after treatment.</p>
 <p>The <strong>WWTP.shp</strong> is a point shapefile containing the emission point of the WWTPs as geometry and important information of the facilities in the attribute table. The required
 information are: ID and name of the WWTP; number of connected inhabitant; number representing the type of treatment (1=primary, 2=secondary, 3=tertiary, 4=quaternary). An
 example of these information can be summarized by <a class="reference internal" href="#wwtp-attribute-table"><span class="std std-numref">Table 2</span></a>.</p>
-<span id="wwtp-attribute-table"></span><table class="docutils align-default" id="id15">
-<caption><span class="caption-number">Table 2 </span><span class="caption-text">Example of attribute table with required data for WWTPs.</span><a class="headerlink" href="#id15" title="Link to this table"></a></caption>
+<span id="wwtp-attribute-table"></span><table class="docutils align-default" id="id27">
+<caption><span class="caption-number">Table 2 </span><span class="caption-text">Example of attribute table with required data for WWTPs.</span><a class="headerlink" href="#id27" title="Link to this table"></a></caption>
 <colgroup>
 <col style="width: 17.6%" />
 <col style="width: 35.3%" />
@@ -318,7 +368,13 @@ to change the selection go back to <a class="reference internal" href="#consumpt
 <ol class="arabic simple" start="6">
 <li><p>Click on <em>Run</em></p></li>
 </ol>
-<div  class="sphinx-contrib-video-container align-left"><video controls="True" height="370" preload="auto" width="700"><source src="_images/Emission_load_1.mp4" type="video/mp4"></video></div><p>Output data:</p>
+<figure>
+  <video width="700" height="370" controls>
+    <source src="_static/Emission_load_1.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <figcaption>Worflow of the <i>Emission Loads</i> tool.</figcaption>
+</figure><p>Output data:</p>
 <ul class="simple">
 <li><p><strong>emission_loads.shp</strong></p></li>
 </ul>
@@ -332,13 +388,18 @@ to change the selection go back to <a class="reference internal" href="#consumpt
 <div class="line">This tool combine the output of <a class="reference internal" href="Flow_Estimation.html#flow-estimation-tool"><span class="std std-ref">Flow Estimation</span></a> with the output of <a class="reference internal" href="#emission-loads"><span class="std std-ref">Emission Loads</span></a>. In this part, the load of the selected APIs is transferred to
 the river network and the concentration for <em>mean flow</em> and <em>mean low flow</em> condition is calculated.</div>
 <div class="line">In the first step, each emission point is projected onto the closest river section, where a new sub-section is created to integrate the WWTP discharge.
-In the example shown in Fig. xx, three river sections and one WWTP are considered. The emission point is connected to river section 2, which is then divided into 2A
+In the example shown in <a class="reference internal" href="#accumulation-division-fig"><span class="std std-numref">Fig. 6</span></a>, three river sections and one WWTP are considered. The emission point is connected to river section 2, which is then divided into 2A
 and 2B. Because flow direction is from section 1 toward section 3, the load is transferred downstream to 2B and 3, while sections 1 and 2A remain unaffected by API inputs.
 From section 2B onward then, the emitted load is accumulated along the river network.</div>
 <div class="line">After splitting, the mean flow and mean low flow of section 2 (the affected section) is proportionally redistributed between 2A and 2B (the new sub-sections) according to
 their relative lengths.</div>
 </div>
-<img alt="_images/accumulation_division.png" src="_images/accumulation_division.png" />
+<figure class="align-default" id="id28">
+<span id="accumulation-division-fig"></span><img alt="_images/accumulation_division.png" src="_images/accumulation_division.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">How the division in extra river sections at WWTPs works within the plugin.</span><a class="headerlink" href="#id28" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>Once all WWTP emission points have been processed this way, API loads are progressively accumulated downstream along the network. Based on these accumulated loads and the
 flow values stored in the river shapefile, API concentrations are then calculated for each river section with formula <a class="reference internal" href="#equation-accumulation-equation">(3)</a>.
 Two values are derived: concentration under mean flow conditions and concentration under mean low flow conditions.</p>
@@ -395,15 +456,21 @@ In case <strong>river_level.shp</strong> is the output of <a class="reference in
 </li>
 <li><p>Click on <em>Run</em></p></li>
 </ol>
-<div  class="sphinx-contrib-video-container align-left"><video controls="True" height="370" preload="auto" width="700"><source src="_images/accumulation_1.mp4" type="video/mp4"></video></div><p>Output data:</p>
+<figure>
+  <video width="700" height="370" controls>
+    <source src="_static/accumulation_1.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <figcaption>Worflow of the <i>Accumulation</i> tool.</figcaption>
+</figure><p>Output data:</p>
 <ul class="simple">
 <li><p><strong>river_accumulation.shp</strong></p></li>
 </ul>
 <p>The output is a line shapefile containing the updated geometry of the river network. Its attribute table contains, for each section, the emitted load, the
 accumulated load and the resulting concentrations under both normal and low-flow condition for each API. <a class="reference internal" href="#accumulation-table"><span class="std std-numref">Table 3</span></a> shows only a part of the attribute table
 for one substance and a few river sections.</p>
-<span id="accumulation-table"></span><table class="docutils align-default" id="id16">
-<caption><span class="caption-number">Table 3 </span><span class="caption-text">Example of attribute table with required data for WWTPs.</span><a class="headerlink" href="#id16" title="Link to this table"></a></caption>
+<span id="accumulation-table"></span><table class="docutils align-default" id="id29">
+<caption><span class="caption-number">Table 3 </span><span class="caption-text">Example of attribute table of river_accumulation.shp.</span><a class="headerlink" href="#id29" title="Link to this table"></a></caption>
 <colgroup>
 <col style="width: 16.7%" />
 <col style="width: 16.7%" />
@@ -486,11 +553,13 @@ for one substance and a few river sections.</p>
 <p>Accumulation of Carbamazepine [<span class="math notranslate nohighlight">\(kg/a\)</span>]</p>
 </aside>
 <aside class="footnote brackets" id="f2" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id10">2</a><span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id10">1</a>,<a role="doc-backlink" href="#id15">2</a>)</span>
 <p>Concentration of Carbamazepine in normal conditions [<span class="math notranslate nohighlight">\(ng/L\)</span>]</p>
 </aside>
 <aside class="footnote brackets" id="f3" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id11">3</a><span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id11">1</a>,<a role="doc-backlink" href="#id16">2</a>)</span>
 <p>Concentration of Carbamazepine in low flow conditions [<span class="math notranslate nohighlight">\(ng/L\)</span>]</p>
 </aside>
 </aside>
@@ -508,12 +577,133 @@ shown in <a class="reference internal" href="#equation-era-equation">(4)</a>.</p
 <li><p><span class="math notranslate nohighlight">\(PEC\)</span> = Predicted Environmental Concentration [<span class="math notranslate nohighlight">\(ng/L\)</span>]</p></li>
 <li><p><span class="math notranslate nohighlight">\(PNEC_{ERA}\)</span> = Predicted No Effect Concentration for ERA [<span class="math notranslate nohighlight">\(ng/L\)</span>]</p></li>
 </ul>
+<p>In addition to individual PNEC calculations, a cumulative Risk Quotient (RQ) coefficient is calculated to provide an overall assessment when
+multiple APIs are selected. This single value summarizes the combined risk from all tested substances in each river section, giving the
+user a quick, comprehensive view of the situation. The Risk Quotient is calculated using formula <a class="reference internal" href="#equation-logistic-function">(5)</a>.</p>
+<div class="math notranslate nohighlight" id="equation-logistic-function">
+<span class="eqno">(5)<a class="headerlink" href="#equation-logistic-function" title="Link to this equation"></a></span>\[RQ(x) = \frac{s}{1 + e^{-k(x-x_0)}}\]</div>
+<p>With:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(RQ\)</span> = Risk Coefficient [-]</p></li>
+<li><p><span class="math notranslate nohighlight">\(x\)</span> = sum of ERA values &gt; 1 [-]</p></li>
+<li><p><span class="math notranslate nohighlight">\(s\)</span> = height parameter [-]</p></li>
+<li><p><span class="math notranslate nohighlight">\(k\)</span> = scale factor [-]</p></li>
+<li><p><span class="math notranslate nohighlight">\(x0\)</span> = midpoint value [-]</p></li>
+</ul>
 <section id="id13">
 <h3>Input data<a class="headerlink" href="#id13" title="Link to this heading"></a></h3>
+<p>Only one input file is necessary:</p>
+<ul class="simple">
+<li><p><strong>river_accumulation.shp</strong></p></li>
+</ul>
+<p>This file is the output of the <a class="reference internal" href="#accumulation"><span class="std std-ref">Accumulation</span></a> tool. The key columns for this process are the ones containing concentration values. For each river section,
+formula <a class="reference internal" href="#equation-era-equation">(4)</a> is applied and a PNEC value is calculated.</p>
 </section>
 <section id="id14">
 <h3>Workflow<a class="headerlink" href="#id14" title="Link to this heading"></a></h3>
-<div  class="sphinx-contrib-video-container align-left"><video controls="True" height="370" preload="auto" width="700"><source src="_images/risk_assessment.mp4" type="video/mp4"></video></div></section>
+<ol class="arabic simple">
+<li><p>If not already in the project, add the input data by clicking on “Layer -&gt; Add Layer -&gt; Add Vector Layer”</p></li>
+<li><p>Go in the Processing Toolbox and look for the <em>APRIORA</em> plugin. Click on <em>API emission</em> and open <em>7 - Risk Assessment</em></p></li>
+<li><p>Choose <strong>river_accumulation.shp</strong> as input for <em>River network</em></p></li>
+<li><p>Select the fields containing the concentration of APIs for the risk assessment. This selection should include only columns containing concentrations in ng/L.</p></li>
+<li><p>If you added custom PNEC values from the <em>Consumption Selection</em> tool, flag the next box, otherwise leave it empty</p></li>
+<li><p>Click on <em>Run</em></p></li>
+</ol>
+<figure>
+  <video width="700" height="370" controls>
+    <source src="_static/risk_assessment.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <figcaption>Worflow of the <i>Risk Assessment</i> tool.</figcaption>
+</figure><p>Output data:</p>
+<ul class="simple">
+<li><p><strong>risk_assessment.shp</strong></p></li>
+</ul>
+<p>The output is a line shapefile containing the same geometry of <strong>river_accumulation.shp</strong>. The attribute table instead, has the same API concentration columns
+plus ERA fields for both condition (mean flow and mean low flow) for each API selected. Finally, the last two columns represent RQ for the same two condition.
+<a class="reference internal" href="#risk-assessment-table"><span class="std std-numref">Table 4</span></a> shows an example of a part of the attribute table.</p>
+<span id="risk-assessment-table"></span><table class="docutils align-default" id="id30">
+<caption><span class="caption-number">Table 4 </span><span class="caption-text">Example of attribute table of risk_assessment.shp.</span><a class="headerlink" href="#id30" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 16.7%" />
+<col style="width: 16.7%" />
+<col style="width: 16.7%" />
+<col style="width: 16.7%" />
+<col style="width: 16.7%" />
+<col style="width: 16.7%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>conc_Carb <a class="footnote-reference brackets" href="#f2" id="id15" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p></th>
+<th class="head"><p>conL_Carb <a class="footnote-reference brackets" href="#f3" id="id16" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a></p></th>
+<th class="head"><p>era_Carb <a class="footnote-reference brackets" href="#f4" id="id17" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a></p></th>
+<th class="head"><p>eraL_Carb <a class="footnote-reference brackets" href="#f5" id="id18" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a></p></th>
+<th class="head"><p>cumul_RQ <a class="footnote-reference brackets" href="#f6" id="id19" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a></p></th>
+<th class="head"><p>cumul_RQ_L <a class="footnote-reference brackets" href="#f7" id="id20" role="doc-noteref"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></a></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>89.309</p></td>
+<td><p>459.004</p></td>
+<td><p>0.035</p></td>
+<td><p>0.183</p></td>
+<td><p>0.999</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>77.771</p></td>
+<td><p>399.703</p></td>
+<td><p>0.031</p></td>
+<td><p>0.159</p></td>
+<td><p>0.999</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>36.737</p></td>
+<td><p>188.808</p></td>
+<td><p>0.015</p></td>
+<td><p>0.075</p></td>
+<td><p>0.007</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>5.778</p></td>
+<td><p>29.699</p></td>
+<td><p>0.002</p></td>
+<td><p>0.012</p></td>
+<td><p>0.007</p></td>
+<td><p>0.007</p></td>
+</tr>
+<tr class="row-even"><td><p>0.789</p></td>
+<td><p>4.056</p></td>
+<td><p>0.0003</p></td>
+<td><p>0.002</p></td>
+<td><p>0.007</p></td>
+<td><p>0.007</p></td>
+</tr>
+</tbody>
+</table>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="f4" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id17">4</a><span class="fn-bracket">]</span></span>
+<p>Environmental Risk Assessment of Carbamazepine in normal conditions [-]</p>
+</aside>
+<aside class="footnote brackets" id="f5" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id18">5</a><span class="fn-bracket">]</span></span>
+<p>Environmental Risk Assessment of Carbamazepine in low flow conditions [-]</p>
+</aside>
+<aside class="footnote brackets" id="f6" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id19">6</a><span class="fn-bracket">]</span></span>
+<p>Risk Quotient in normal conditions [-]</p>
+</aside>
+<aside class="footnote brackets" id="f7" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id20">7</a><span class="fn-bracket">]</span></span>
+<p>Risk Quotient in low flow conditions [-]</p>
+</aside>
+</aside>
+<p>The style of <strong>risk_assessment.shp</strong> is based on the value of RQ and it is possible to change it by going on “Layer Properties” -&gt; “Symbology”.</p>
+</section>
+</section>
+<section id="dummy-data">
+<span id="id21"></span><h2>Dummy data<a class="headerlink" href="#dummy-data" title="Link to this heading"></a></h2>
+<p>You can find the data used for making the video-tutorial at this <a class="reference external" href="https://unibox.uni-rostock.de/getlink/fiDTUCNDi2eJj6pneAW4b7/4_Fourth%20TTT%20session%20%2830.09.25%29">link</a>.
+Feel free to download them and try to replicate the workflow.</p>
 </section>
 </section>
 
