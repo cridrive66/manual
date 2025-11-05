@@ -1,0 +1,307 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accumulation &mdash; APRIORA plugin manual  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=1f9ce7ab" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Risk Assessment" href="Risk_assessment.html" />
+    <link rel="prev" title="Emission Loads" href="Emission_Load.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            APRIORA plugin manual
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Content</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation for Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Flow_Estimation.html">Flow Estimation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="API_emission.html">API Emission</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Consumption.html">Consumption Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Emission_Load.html">Emission Loads</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Accumulation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#input-data">Input data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#workflow">Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Risk_assessment.html">Risk Assessment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="API_emission.html#dummy-data">Dummy data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Mitigation_option.html">Mitigation options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="License.html">License</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">APRIORA plugin manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="API_emission.html">API Emission</a></li>
+      <li class="breadcrumb-item active">Accumulation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Accumulation.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="accumulation">
+<span id="id1"></span><h1>Accumulation<a class="headerlink" href="#accumulation" title="Link to this heading"></a></h1>
+<div class="line-block">
+<div class="line">This tool combine the output of <a class="reference internal" href="Flow_Estimation.html#flow-estimation-tool"><span class="std std-ref">Flow Estimation</span></a> with the output of <a class="reference internal" href="Emission_Load.html#emission-loads"><span class="std std-ref">Emission Loads</span></a>. In this part, the load of the selected APIs is transferred to
+the river network and the concentration for <em>mean flow</em> and <em>mean low flow</em> condition is calculated.</div>
+<div class="line">In the first step, each emission point is projected onto the closest river section, where a new sub-section is created to integrate the WWTP discharge.
+In the example shown in <a class="reference internal" href="#accumulation-division-fig"><span class="std std-numref">Fig. 6</span></a>, three river sections and one WWTP are considered. The emission point is connected to river section 2, which is then divided into 2A
+and 2B. Because flow direction is from section 1 toward section 3, the load is transferred downstream to 2B and 3, while sections 1 and 2A remain unaffected by API inputs.
+From section 2B onward then, the emitted load is accumulated along the river network.</div>
+<div class="line">After splitting, the mean flow and mean low flow of section 2 (the affected section) is proportionally redistributed between 2A and 2B (the new sub-sections) according to
+their relative lengths.</div>
+</div>
+<figure class="align-default" id="id5">
+<span id="accumulation-division-fig"></span><img alt="_images/accumulation_division.png" src="_images/accumulation_division.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">How the division in extra river sections at WWTPs works within the plugin.</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Once all WWTP emission points have been processed this way, API loads are progressively accumulated downstream along the network. Based on these accumulated loads and the
+flow values stored in the river shapefile, API concentrations are then calculated for each river section with formula <a class="reference internal" href="#equation-accumulation-equation">(3)</a>.
+Two values are derived: concentration under mean flow conditions and concentration under mean low flow conditions.</p>
+<div class="math notranslate nohighlight" id="equation-accumulation-equation">
+<span class="eqno">(3)<a class="headerlink" href="#equation-accumulation-equation" title="Link to this equation"></a></span>\[PEC = \frac{\sum (m_{WW,eff})_{up}}{Q} \cdot k\]</div>
+<p>With:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(PEC\)</span> = Predicted Environmental Concentration [<span class="math notranslate nohighlight">\(ng/L\)</span>]</p></li>
+<li><p><span class="math notranslate nohighlight">\((m_{WW,eff})_{up}\)</span> = load from all the upstream river section [<span class="math notranslate nohighlight">\(kg/a\)</span>]</p></li>
+<li><p><span class="math notranslate nohighlight">\(Q\)</span> = mean flow or mean low flow [<span class="math notranslate nohighlight">\(m^3\!/s\)</span>]</p></li>
+<li><p><span class="math notranslate nohighlight">\(k\)</span> = conversion factor [<span class="math notranslate nohighlight">\(\frac{ng/kg \cdot m^3\!/L}{s/a}\)</span>]</p></li>
+</ul>
+<section id="input-data">
+<h2>Input data<a class="headerlink" href="#input-data" title="Link to this heading"></a></h2>
+<p>Two input data are required for this tool:</p>
+<ul class="simple">
+<li><p><strong>emission_loads.shp</strong></p></li>
+<li><p><strong>river_level.shp</strong></p></li>
+</ul>
+<p>The <strong>emission_loads.shp</strong> is the output of <a class="reference internal" href="Emission_Load.html#emission-loads"><span class="std std-ref">Emission Loads</span></a> while <strong>river_level.shp</strong> is the output of <a class="reference internal" href="Flow_Estimation.html#flow-estimation-tool"><span class="std std-ref">Flow Estimation</span></a>. In case the user already has
+regionalized flow data, going through the <a class="reference internal" href="Flow_Estimation.html#flow-estimation"><span class="std std-ref">Flow Estimation</span></a> set of tools is not necessary. The important fields that should be in <strong>river_level.shp</strong> are:</p>
+<ul class="simple">
+<li><p>ID field: a column with a unique ID for each river section</p></li>
+<li><p>Next field: a column with the ID of the downstream river section</p></li>
+<li><p>Mean flow: mean flow value for the single river section [<span class="math notranslate nohighlight">\(m^3\!/s\)</span>]</p></li>
+<li><p>Accumulated mean flow: sum of the upstream mean flow values [<span class="math notranslate nohighlight">\(m^3\!/s\)</span>]</p></li>
+<li><p>Mean low flow: mean low flow value for the single river section [<span class="math notranslate nohighlight">\(m^3\!/s\)</span>]</p></li>
+<li><p>Accumulated mean low flow: sum of the upstream mean low flow values [<span class="math notranslate nohighlight">\(m^3\!/s\)</span>]</p></li>
+</ul>
+<p>Regarding <strong>emission_loads.shp</strong>, the emission point should be at maximum 500 m from the closest river section, as stated before. If not, edit the location of the point.</p>
+</section>
+<section id="workflow">
+<h2>Workflow<a class="headerlink" href="#workflow" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Add the input data to the project by clicking on “Layer -&gt; Add Layer -&gt; Add Vector Layer”</p></li>
+<li><p>Go in the Processing Toolbox and look for the <em>APRIORA</em> plugin. Click on <em>API emission</em> and open <em>6 - Accumulation</em></p></li>
+<li><p>Choose <strong>emission_loads.shp</strong> as input for <em>API load</em></p></li>
+<li><p>Select the fields containing the APIs to accumulate. This selection should include only columns containing load of APIs in kg/a.</p></li>
+<li><p>Choose <strong>river_level.shp</strong> as input for <em>River network</em></p></li>
+<li><div class="line-block">
+<div class="line">Select the correct field of <strong>river_level.shp</strong> for <em>ID Field</em>, <em>Next Field</em>, <em>Mean Flow</em>, <em>Acc. Mean Flow</em>, <em>Mean Low Flow</em> and <em>Acc. Mean Low Flow</em>.
+In case <strong>river_level.shp</strong> is the output of <a class="reference internal" href="Flow_Estimation.html#flow-estimation-tool"><span class="std std-ref">Flow Estimation</span></a>, here are the correct fields to select:</div>
+</div>
+<blockquote>
+<div><ul class="simple">
+<li><p><em>ID Field</em> -&gt; NET_ID</p></li>
+<li><p><em>Next Field</em> -&gt; NET_TO</p></li>
+<li><p><em>Mean Flow</em> -&gt; Mean_Flow</p></li>
+<li><p><em>Acc. Mean Flow</em> -&gt; calc_Mean_</p></li>
+<li><p><em>Mean Low Flow</em> -&gt; M_Low_Flow</p></li>
+<li><p><em>Acc. Mean Low Flow</em> -&gt; calc_M_Low</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Click on <em>Run</em></p></li>
+</ol>
+<figure>
+  <video width="700" height="370" controls>
+    <source src="_static/accumulation_1.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <figcaption>Worflow of the <i>Accumulation</i> tool.</figcaption>
+</figure><p>Output data:</p>
+<ul class="simple">
+<li><p><strong>river_accumulation.shp</strong></p></li>
+</ul>
+<p>The output is a line shapefile containing the updated geometry of the river network. Its attribute table contains, for each section, the emitted load, the
+accumulated load and the resulting concentrations under both normal and low-flow condition for each API. <a class="reference internal" href="#accumulation-table"><span class="std std-numref">Table 3</span></a> shows only a part of the attribute table
+for one substance and a few river sections.</p>
+<span id="accumulation-table"></span><table class="docutils align-default" id="id6">
+<caption><span class="caption-number">Table 3 </span><span class="caption-text">Example of attribute table of river_accumulation.shp.</span><a class="headerlink" href="#id6" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 16.7%" />
+<col style="width: 16.7%" />
+<col style="width: 16.7%" />
+<col style="width: 16.7%" />
+<col style="width: 16.7%" />
+<col style="width: 16.7%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>NET_ID</p></th>
+<th class="head"><p>NET_TO</p></th>
+<th class="head"><p>Carb[kg/a]</p></th>
+<th class="head"><p>acc_Carb <a class="footnote-reference brackets" href="#f1" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></th>
+<th class="head"><p>conc_Carb <a class="footnote-reference brackets" href="#f2" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p></th>
+<th class="head"><p>conL_Carb <a class="footnote-reference brackets" href="#f3" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1005</p></td>
+<td><p>1006</p></td>
+<td><p>0</p></td>
+<td><p>17.789</p></td>
+<td><p>39.422</p></td>
+<td><p>150.251</p></td>
+</tr>
+<tr class="row-odd"><td><p>1006</p></td>
+<td><p>1007</p></td>
+<td><p>0</p></td>
+<td><p>17.789</p></td>
+<td><p>39.265</p></td>
+<td><p>149.398</p></td>
+</tr>
+<tr class="row-even"><td><p>1007</p></td>
+<td><p>1008A</p></td>
+<td><p>0</p></td>
+<td><p>17.789</p></td>
+<td><p>39.134</p></td>
+<td><p>148.712</p></td>
+</tr>
+<tr class="row-odd"><td><p>1008A</p></td>
+<td><p>1008B</p></td>
+<td><p>0</p></td>
+<td><p>17.789</p></td>
+<td><p>38.615</p></td>
+<td><p>148.277</p></td>
+</tr>
+<tr class="row-even"><td><p>1008B</p></td>
+<td><p>1009</p></td>
+<td><p>3.68</p></td>
+<td><p>21.469</p></td>
+<td><p>41.873</p></td>
+<td><p>168.519</p></td>
+</tr>
+<tr class="row-odd"><td><p>1009</p></td>
+<td><p>1010</p></td>
+<td><p>0</p></td>
+<td><p>21.469</p></td>
+<td><p>41.671</p></td>
+<td><p>167.611</p></td>
+</tr>
+<tr class="row-even"><td><p>1010</p></td>
+<td><p>1011</p></td>
+<td><p>0</p></td>
+<td><p>21.469</p></td>
+<td><p>41.368</p></td>
+<td><p>166.652</p></td>
+</tr>
+<tr class="row-odd"><td><p>1011</p></td>
+<td><p>1012</p></td>
+<td><p>0</p></td>
+<td><p>21.469</p></td>
+<td><p>40.693</p></td>
+<td><p>164.549</p></td>
+</tr>
+</tbody>
+</table>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="f1" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
+<p>Accumulation of Carbamazepine [<span class="math notranslate nohighlight">\(kg/a\)</span>]</p>
+</aside>
+<aside class="footnote brackets" id="f2" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">2</a><span class="fn-bracket">]</span></span>
+<p>Concentration of Carbamazepine in normal conditions [<span class="math notranslate nohighlight">\(ng/L\)</span>]</p>
+</aside>
+<aside class="footnote brackets" id="f3" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">3</a><span class="fn-bracket">]</span></span>
+<p>Concentration of Carbamazepine in low flow conditions [<span class="math notranslate nohighlight">\(ng/L\)</span>]</p>
+</aside>
+</aside>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Emission_Load.html" class="btn btn-neutral float-left" title="Emission Loads" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Risk_assessment.html" class="btn btn-neutral float-right" title="Risk Assessment" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Cristiano Guidi.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

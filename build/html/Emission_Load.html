@@ -1,0 +1,231 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emission Loads &mdash; APRIORA plugin manual  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=1f9ce7ab" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Accumulation" href="Accumulation.html" />
+    <link rel="prev" title="Consumption Selection" href="Consumption.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            APRIORA plugin manual
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Content</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation for Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Flow_Estimation.html">Flow Estimation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="API_emission.html">API Emission</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Consumption.html">Consumption Selection</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Emission Loads</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#input-data">Input data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#workflow">Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Accumulation.html">Accumulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Risk_assessment.html">Risk Assessment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="API_emission.html#dummy-data">Dummy data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Mitigation_option.html">Mitigation options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="License.html">License</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">APRIORA plugin manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="API_emission.html">API Emission</a></li>
+      <li class="breadcrumb-item active">Emission Loads</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Emission_Load.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="emission-loads">
+<span id="id1"></span><h1>Emission Loads<a class="headerlink" href="#emission-loads" title="Link to this heading"></a></h1>
+<p>This tool calculates the load of previously selected APIs at each WWTP within a catchmment.
+The load is calculated according to the formula <a class="reference internal" href="#equation-load-equation">(2)</a>:</p>
+<div class="math notranslate nohighlight" id="equation-load-equation">
+<span class="eqno">(2)<a class="headerlink" href="#equation-load-equation" title="Link to this equation"></a></span>\[m_{WW,eff} = i_{WWTP} \cdot m_{i,y} \cdot (1 - r_{WWTP}) / 1000\]</div>
+<p>With:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(m_{WW,eff}\)</span> = load [<span class="math notranslate nohighlight">\(kg/a\)</span>]</p></li>
+<li><p><span class="math notranslate nohighlight">\(i_{WWTP}\)</span> = connected inhabitants [<span class="math notranslate nohighlight">\(inh\)</span>]</p></li>
+<li><p><span class="math notranslate nohighlight">\(m_{i,y}\)</span> = yearly consumption of y API [<span class="math notranslate nohighlight">\(mg/inh/a\)</span>]</p></li>
+<li><p><span class="math notranslate nohighlight">\(r_{WWTP}\)</span> = removal rate  [-]</p></li>
+</ul>
+<p>The plugin retrieves the technical class assigned to each treatmant plant and identifies the corresponding removal rate for each API
+from the data pool. This value (<span class="math notranslate nohighlight">\(r_{WWTP}\)</span>) is then used as input for formula <a class="reference internal" href="#equation-load-equation">(2)</a> to calculate the
+reduced emissions after treatment.</p>
+<section id="input-data">
+<h2>Input data<a class="headerlink" href="#input-data" title="Link to this heading"></a></h2>
+<p>One input data is necessary for this tool:</p>
+<ul class="simple">
+<li><p><strong>WWTP.shp</strong></p></li>
+</ul>
+<p>The <strong>WWTP.shp</strong> is a point shapefile containing the emission point of the WWTPs as geometry and important information of the facilities in the attribute table. The required
+information are: ID and name of the WWTP; number of connected inhabitant; number representing the type of treatment (1=primary, 2=secondary, 3=tertiary, 4=quaternary). An
+example of these information can be summarized by <a class="reference internal" href="#wwtp-attribute-table"><span class="std std-numref">Table 2</span></a>.</p>
+<span id="wwtp-attribute-table"></span><table class="docutils align-default" id="id2">
+<caption><span class="caption-number">Table 2 </span><span class="caption-text">Example of attribute table with required data for WWTPs.</span><a class="headerlink" href="#id2" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 17.6%" />
+<col style="width: 35.3%" />
+<col style="width: 23.5%" />
+<col style="width: 23.5%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>ID</p></th>
+<th class="head"><p>Name</p></th>
+<th class="head"><p>Connected Inhabitants</p></th>
+<th class="head"><p>Type of treatment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>163</p></td>
+<td><p>KA Vorbeck</p></td>
+<td><p>98</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>202</p></td>
+<td><p>KA Groß Lüsewitz</p></td>
+<td><p>913</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>691</p></td>
+<td><p>KA Schwaan</p></td>
+<td><p>10004</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p>156</p></td>
+<td><p>KA Hanstorf</p></td>
+<td><p>312</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>169</p></td>
+<td><p>KA Güstrow/Parum</p></td>
+<td><p>34333</p></td>
+<td><p>3</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The column “Type of treatment” needs to be a number from 1 to 4.
+The emission point should be within 500 m to the closest river section.</p>
+</div>
+</section>
+<section id="workflow">
+<h2>Workflow<a class="headerlink" href="#workflow" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Add the input data to the project by clicking on “Layer -&gt; Add Layer -&gt; Add Vector Layer”</p></li>
+<li><p>Go in the Processing Toolbox and look for the <em>APRIORA</em> plugin. Click on <em>API emission</em> and open <em>5 - Emission Loads</em></p></li>
+<li><p>Choose <strong>WWTP.shp</strong> as input for <em>Emission Points of WWTP</em></p></li>
+<li><p>Select the correct field of <strong>WWTP.shp</strong> for <em>ID</em>, <em>Name</em>, <em>Connected Inhabitants</em> and <em>Technology Class</em></p></li>
+<li><p>If you created a custom table from the <em>Consumption Selection</em> tool, flag the next box, otherwise leave it empty</p></li>
+</ol>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Under <em>Current API Selection</em> you can see the substances previously selected. This window is only displaying the selection, if you want
+to change the selection go back to <a class="reference internal" href="Consumption.html#consumption-selection"><span class="std std-ref">Consumption Selection</span></a>.</p>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Click on <em>Run</em></p></li>
+</ol>
+<figure>
+  <video width="700" height="370" controls>
+    <source src="_static/Emission_load_1.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <figcaption>Worflow of the <i>Emission Loads</i> tool.</figcaption>
+</figure><p>Output data:</p>
+<ul class="simple">
+<li><p><strong>emission_loads.shp</strong></p></li>
+</ul>
+<p>The output is a point shapefile with the same geometry as the <strong>WWTP.shp</strong>. The attribute table contains the <em>ID</em> and <em>Name</em> columns from <strong>WWTP.shp</strong> and
+<em>n</em> columns related to the emission load of <em>n</em> selected APIs (e.g., if the user selects 3 APIs, 3 load columns are added). Finally, the load is expressed in <em>kg/a</em>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Consumption.html" class="btn btn-neutral float-left" title="Consumption Selection" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Accumulation.html" class="btn btn-neutral float-right" title="Accumulation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Cristiano Guidi.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

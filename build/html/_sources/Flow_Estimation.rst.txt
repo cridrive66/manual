@@ -4,7 +4,7 @@ Flow Estimation
 ===============
 
 The *Flow Estimation* provides an estimation of yearly mean flow and yearly mean low fow for each subcatchment or 
-river section within a specified catchment area. This estimation is made by **Random Forest** (`source <https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html>`_), which
+river section within a specified catchment area. This estimation is made by **Random Forest** (`source__ <https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html>`_), which
 uses the catchment's geographical characteristics as predictors and water flow data collected from gauging stations
 to calibrate and validate the approach.
 
@@ -26,7 +26,7 @@ This information is very important for calculating the flow of each river sectio
 Also, in many cases the intersection between the river network and the subcatchments is not perfectly aligned. This misalignment can cause issue in later 
 steps of the plugin, so better fix the input beforehand! 
 
-This algorithm was developed from the plugin *WaterNetAnalyzer* by Jannik Schilling (`source <https://github.com/Jannik-Schilling/WaterNetAnalyzer>`_).
+This algorithm was developed from the plugin *WaterNetAnalyzer* by Jannik Schilling (`source___ <https://github.com/Jannik-Schilling/WaterNetAnalyzer>`_).
 
 NET_ID and NET_TO are very important because they explain the relationship of the river network.
 

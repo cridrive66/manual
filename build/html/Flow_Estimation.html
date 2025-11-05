@@ -70,7 +70,9 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="API_emission.html">API Emission</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mitigation_option.html">Mitigation options</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="License.html">License</a></li>
 </ul>
 
         </div>
@@ -100,7 +102,7 @@
   <section id="flow-estimation">
 <span id="id1"></span><h1>Flow Estimation<a class="headerlink" href="#flow-estimation" title="Link to this heading"></a></h1>
 <p>The <em>Flow Estimation</em> provides an estimation of yearly mean flow and yearly mean low fow for each subcatchment or
-river section within a specified catchment area. This estimation is made by <strong>Random Forest</strong> (<a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html">source</a>), which
+river section within a specified catchment area. This estimation is made by <strong>Random Forest</strong> (<a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html">source__</a>), which
 uses the catchment’s geographical characteristics as predictors and water flow data collected from gauging stations
 to calibrate and validate the approach.</p>
 <p>This group of tools is divided in 4 different processes:</p>
@@ -117,7 +119,7 @@ to calibrate and validate the approach.</p>
 This information is very important for calculating the flow of each river section and determining accumulated values.
 Also, in many cases the intersection between the river network and the subcatchments is not perfectly aligned. This misalignment can cause issue in later
 steps of the plugin, so better fix the input beforehand!</p>
-<p>This algorithm was developed from the plugin <em>WaterNetAnalyzer</em> by Jannik Schilling (<a class="reference external" href="https://github.com/Jannik-Schilling/WaterNetAnalyzer">source</a>).</p>
+<p>This algorithm was developed from the plugin <em>WaterNetAnalyzer</em> by Jannik Schilling (<a class="reference external" href="https://github.com/Jannik-Schilling/WaterNetAnalyzer">source___</a>).</p>
 <p>NET_ID and NET_TO are very important because they explain the relationship of the river network.</p>
 <p>It can happen that there is a misalignment between the river sections and the subcatchments. Here we fix it.
 We fix it because otherwise the model struggle to understand where the water is flowing and it can cause errors or over/under estimation during the flow model.</p>

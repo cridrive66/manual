@@ -18,7 +18,9 @@ APRIORA plugin manual (v.0.6.4)
    Installation
    Flow_Estimation
    API_emission
+   Mitigation_option
    Troubleshooting
+   License
 
 
 Credits
