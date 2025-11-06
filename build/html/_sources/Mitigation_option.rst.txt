@@ -24,7 +24,7 @@ Upgrade the treatment type means, for example, that a WWTP is upgraded from a te
 6.	In the equation box, write *tech_class* and click on “Update All”
 7.	Change the value of *TC_upgr* from one of the WWTPs to “4”
 8.	Save the edit
-9.	Re-do the workflow from :ref:`consumption-selection` to see the updated concentration values
+9.	Re-do the workflow from :ref:`consumption-selection` until :ref:`risk-assessment` to see the updated concentration values
 
 
 **add video-tutorial**
@@ -43,7 +43,7 @@ Another mitigation option could be to relocate the WWTP to other larger faciliti
 6.	In the equation box, write *conn_inh* and click on “Update All”
 7.	Remove the value of *conn_upgr* from one WWTP and add it to another WWTP
 8.	Save the edit
-9.	Re-do the workflow from :ref:`consumption-selection` to see the updated concentration values
+9.	Re-do the workflow from :ref:`consumption-selection` until :ref:`risk-assessment` to see the updated concentration values
 
 **add video-tutorial**
 
@@ -60,6 +60,6 @@ The steps to do this are:
 3.	Click on “Vertex Tool”
 4.	Click on the emission point that you want to redirect and move it to a different river section
 5.	Save the edit
-6.	Re-do the workflow from :ref:`accumulation` to see the updated concentration values
+6.	Re-do the workflow from :ref:`accumulation` until :ref:`risk-assessment` to see the updated concentration values
 
 **add video-tutorial**

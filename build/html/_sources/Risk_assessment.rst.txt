@@ -62,7 +62,7 @@ Workflow
        <source src="_static/risk_assessment.mp4" type="video/mp4">
        Your browser does not support the video tag.
      </video>
-     <figcaption>Worflow of the <i>Risk Assessment</i> tool.</figcaption>
+     <figcaption>Video: Worflow of the <i>Risk Assessment</i> tool.</figcaption>
    </figure>
 
 
@@ -80,12 +80,12 @@ plus ERA fields for both condition (mean flow and mean low flow) for each API se
     :header-rows: 1
     :widths: 15 15 15 15 15 15
 
-    * - conc_Carb [#f2]_
-      - conL_Carb [#f3]_
-      - era_Carb [#f4]_
-      - eraL_Carb [#f5]_
-      - cumul_RQ [#f6]_
-      - cumul_RQ_L [#f7]_
+    * - conc_Carb [#f1]_
+      - conL_Carb [#f2]_
+      - era_Carb [#f3]_
+      - eraL_Carb [#f4]_
+      - cumul_RQ [#f5]_
+      - cumul_RQ_L [#f6]_
     * - 89.309
       - 459.004
       - 0.035
@@ -117,11 +117,11 @@ plus ERA fields for both condition (mean flow and mean low flow) for each API se
       - 0.007
       - 0.007
     
-.. [#f2] Concentration of Carbamazepine in normal conditions [:math:`ng/L`]
-.. [#f3] Concentration of Carbamazepine in low flow conditions [:math:`ng/L`]    
-.. [#f4] Environmental Risk Assessment of Carbamazepine in normal conditions [-]
-.. [#f5] Environmental Risk Assessment of Carbamazepine in low flow conditions [-]
-.. [#f6] Risk Quotient in normal conditions [-]
-.. [#f7] Risk Quotient in low flow conditions [-]
+.. [#f1] Concentration of Carbamazepine in normal conditions [:math:`ng/L`]
+.. [#f2] Concentration of Carbamazepine in low flow conditions [:math:`ng/L`]    
+.. [#f3] Environmental Risk Assessment of Carbamazepine in normal conditions [-]
+.. [#f4] Environmental Risk Assessment of Carbamazepine in low flow conditions [-]
+.. [#f5] Risk Quotient in normal conditions [-]
+.. [#f6] Risk Quotient in low flow conditions [-]
 
 The style of **risk_assessment.shp** is based on the value of RQ and it is possible to change it by going on "Layer Properties" -> "Symbology".

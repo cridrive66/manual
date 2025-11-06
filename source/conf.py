@@ -28,6 +28,13 @@ numfig = True # for figure/table numbering
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = 'sphinx_rtd_theme'
-# html_logo = 'images/icon.png'
+
+# The name of an image file (relative to this directory) to place at the top
+# of the sidebar.
+html_logo = 'images/icon.png'
+html_theme_options = {
+    'logo_only': True,
+}
+
 html_static_path = ['_static']
 html_css_files = ["css/custom.css"]

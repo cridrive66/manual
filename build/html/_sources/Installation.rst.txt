@@ -5,10 +5,8 @@ Installation for Windows
 
 Extra library required
 ----------------------
-.. note::
-      To run the plugin, you will need to download an extra library called **scikit-learn** (`source <https://scikit-learn.org/stable/>`_) which is not included in the standard QGIS installation.
-
-To install the missing package, follow these steps:
+| To run the :ref:`Flow_Estimation` tool, an extra library called **scikit-learn** (`source <https://scikit-learn.org/stable/>`_) is necessary and 
+ is not included in the standard QGIS installation. In case you already have regionalized flow data, you can skip this step. To install the missing package:
 
 1. Open "OSGeo4W Shell", you can find it already installed with QGIS.
 2. Digit::
@@ -17,24 +15,30 @@ To install the missing package, follow these steps:
 
 3. Press *Enter*
 
-If you encounter errors, check the :ref:`Troubleshooting` section.
+| If you encounter errors, check the :ref:`Troubleshooting` section.
 
 Installation via local repository
 ---------------------------------
-After succesfully installed "scikit-learn", you can open QGIS and go to *Plugins* --> *Manage and Install Plugins*.
+Since the tool is not published yet in the official QGIS repository, it is necessary to add a local repository to have access to its download.
+It is possible to do so by following these steps:
 
-.. image:: images/Picture1.png
+1. Open QGIS and go to *Plugins* --> *Manage and Install Plugins*.
 
-1. Go to *Settings* and click on *Add...*
-2. Under *Name* digit "APRIORA repository" (or whatever you prefer)
-3. Under *URL* insert ``https://cridrive66.github.io/APRIORA-rep/plugin.xml``
-4. Click on *OK*
+.. figure:: images/installation-location.png
 
-.. image:: images/Repository_1.png
+2. Go to *Settings* and click on *Add...*
+3. Under *Name* digit "APRIORA repository" (or whatever you prefer)
+4. Under *URL* insert ``https://cridrive66.github.io/APRIORA-rep/plugin.xml``
+5. Click on *OK*
 
-5. Check if the *Status* of the repository is **connected**
+.. figure:: images/Repository_1.png
+      :width: 500
 
-.. image:: images/Repository_2.png
+6. Check if the *Status* of the repository is **connected**
+
+.. figure:: images/Repository_2.png
+
+**add video-tutorial**
 
 Installation via .zip file
 --------------------------

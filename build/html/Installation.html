@@ -9,7 +9,7 @@
   <title>Installation for Windows &mdash; APRIORA plugin manual  documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
-      <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=1f9ce7ab" />
+      <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=591a5f70" />
 
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
@@ -32,8 +32,9 @@
 
           
           
-          <a href="index.html" class="icon icon-home">
-            APRIORA plugin manual
+          <a href="index.html">
+            
+              <img src="_static/icon.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -87,11 +88,10 @@
 <span id="installation"></span><h1>Installation for Windows<a class="headerlink" href="#installation-for-windows" title="Link to this heading"></a></h1>
 <section id="extra-library-required">
 <h2>Extra library required<a class="headerlink" href="#extra-library-required" title="Link to this heading"></a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>To run the plugin, you will need to download an extra library called <strong>scikit-learn</strong> (<a class="reference external" href="https://scikit-learn.org/stable/">source</a>) which is not included in the standard QGIS installation.</p>
+<div class="line-block">
+<div class="line">To run the <a class="reference internal" href="Flow_Estimation.html#flow-estimation"><span class="std std-ref">Flow Estimation</span></a> tool, an extra library called <strong>scikit-learn</strong> (<a class="reference external" href="https://scikit-learn.org/stable/">source</a>) is necessary and
+is not included in the standard QGIS installation. In case you already have regionalized flow data, you can skip this step. To install the missing package:</div>
 </div>
-<p>To install the missing package, follow these steps:</p>
 <ol class="arabic">
 <li><p>Open “OSGeo4W Shell”, you can find it already installed with QGIS.</p></li>
 <li><p>Digit:</p>
@@ -101,23 +101,37 @@
 </li>
 <li><p>Press <em>Enter</em></p></li>
 </ol>
-<p>If you encounter errors, check the <a class="reference internal" href="Troubleshooting.html#troubleshooting"><span class="std std-ref">Troubleshooting</span></a> section.</p>
+<div class="line-block">
+<div class="line">If you encounter errors, check the <a class="reference internal" href="Troubleshooting.html#troubleshooting"><span class="std std-ref">Troubleshooting</span></a> section.</div>
+</div>
 </section>
 <section id="installation-via-local-repository">
 <h2>Installation via local repository<a class="headerlink" href="#installation-via-local-repository" title="Link to this heading"></a></h2>
-<p>After succesfully installed “scikit-learn”, you can open QGIS and go to <em>Plugins</em> –&gt; <em>Manage and Install Plugins</em>.</p>
-<img alt="_images/Picture1.png" src="_images/Picture1.png" />
+<p>Since the tool is not published yet in the official QGIS repository, it is necessary to add a local repository to have access to its download.
+It is possible to do so by following these steps:</p>
 <ol class="arabic simple">
+<li><p>Open QGIS and go to <em>Plugins</em> –&gt; <em>Manage and Install Plugins</em>.</p></li>
+</ol>
+<figure class="align-default">
+<img alt="_images/installation-location.png" src="_images/installation-location.png" />
+</figure>
+<ol class="arabic simple" start="2">
 <li><p>Go to <em>Settings</em> and click on <em>Add…</em></p></li>
 <li><p>Under <em>Name</em> digit “APRIORA repository” (or whatever you prefer)</p></li>
 <li><p>Under <em>URL</em> insert <code class="docutils literal notranslate"><span class="pre">https://cridrive66.github.io/APRIORA-rep/plugin.xml</span></code></p></li>
 <li><p>Click on <em>OK</em></p></li>
 </ol>
-<img alt="_images/Repository_1.png" src="_images/Repository_1.png" />
-<ol class="arabic simple" start="5">
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/Repository_1.png"><img alt="_images/Repository_1.png" src="_images/Repository_1.png" style="width: 500px;" />
+</a>
+</figure>
+<ol class="arabic simple" start="6">
 <li><p>Check if the <em>Status</em> of the repository is <strong>connected</strong></p></li>
 </ol>
+<figure class="align-default">
 <img alt="_images/Repository_2.png" src="_images/Repository_2.png" />
+</figure>
+<p><strong>add video-tutorial</strong></p>
 </section>
 <section id="installation-via-zip-file">
 <h2>Installation via .zip file<a class="headerlink" href="#installation-via-zip-file" title="Link to this heading"></a></h2>

@@ -3,16 +3,22 @@
 Consumption Selection
 ----------------------
 This tool is giving the user the access to the APRIORA's internal database related to consumption data, removal rates and PNEC values.
-Since it is not a processing tool, the user cannot find it under the *Processing Toolbox*. It is displayed instead under *Plugins* --> *Consumption Selection* or
-in the Menu Toolbar (:numref:`consumption_selection-fig`).
+Since it is not a processing tool, the user cannot find it under the *Processing Toolbox*. It is displayed instead under *Plugins* --> *Consumption Selection* 
+(:numref:`consumption_selection_menu-fig`) or in the Menu Toolbar (:numref:`consumption_selection-fig`).
+
+.. _consumption_selection_menu-fig:
+
+.. figure:: images/consumption_selection_menu.png
+  :width: 500
+
+  How to find *Consumption Selection* tool under *Plugins*.
 
 .. _consumption_selection-fig:
 
 .. figure:: images/consumption_selection.png
-    :width: 500
-    :height: 200
-    
-    Location of the *Consumption Selection* tool in the Menu Toolbar.
+  :width: 300
+
+  Location of the *Consumption Selection* tool in the Menu Toolbar.
 
     
 The tool contains 4 different windows:
@@ -89,6 +95,7 @@ With:
 .. _PNEC_interface-fig:
 
 .. figure:: images/PNEC_interface.png
+  :width: 600
 
   Interface of the "PNEC values" window within the Consumption Selection tool.
 
@@ -129,7 +136,7 @@ In case the user would like to add custom substances:
        <source src="_static/Consumption_selection_1.mp4" type="video/mp4">
        Your browser does not support the video tag.
      </video>
-     <figcaption>Worflow of <i>Consumption data</i> window within <i>Consumption Selection</i> tool.</figcaption>
+     <figcaption>Video: Worflow of <i>Consumption data</i> window within <i>Consumption Selection</i> tool.</figcaption>
    </figure>
 
 **Removal rate**
@@ -147,7 +154,7 @@ In case the user would like to add custom substances:
        <source src="_static/removal_rate.mp4" type="video/mp4">
        Your browser does not support the video tag.
      </video>
-     <figcaption>Worflow of <i>Removal rate</i> window within <i>Consumption Selection</i> tool.</figcaption>
+     <figcaption>Video: Worflow of <i>Removal rate</i> window within <i>Consumption Selection</i> tool.</figcaption>
    </figure>
 
 **Custom table**
@@ -165,7 +172,7 @@ In case the user would like to add custom substances:
        <source src="_static/custom_table.mp4" type="video/mp4">
        Your browser does not support the video tag.
      </video>
-     <figcaption>Worflow of <i>Custom table</i> window within <i>Consumption Selection</i> tool.</figcaption>
+     <figcaption>Video: Worflow of <i>Custom table</i> window within <i>Consumption Selection</i> tool.</figcaption>
    </figure>
 
 **PNEC values**
@@ -183,5 +190,5 @@ In case the user would like to add custom substances:
        <source src="_static/PNEC.mp4" type="video/mp4">
        Your browser does not support the video tag.
      </video>
-     <figcaption>Worflow of <i>PNEC values</i> window within <i>Consumption Selection</i> tool.</figcaption>
+     <figcaption>Video: Worflow of <i>PNEC values</i> window within <i>Consumption Selection</i> tool.</figcaption>
    </figure>

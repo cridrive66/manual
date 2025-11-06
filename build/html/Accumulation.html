@@ -9,7 +9,7 @@
   <title>Accumulation &mdash; APRIORA plugin manual  documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
-      <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=1f9ce7ab" />
+      <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=591a5f70" />
 
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
@@ -33,8 +33,9 @@
 
           
           
-          <a href="index.html" class="icon icon-home">
-            APRIORA plugin manual
+          <a href="index.html">
+            
+              <img src="_static/icon.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -97,7 +98,7 @@
 <div class="line">This tool combine the output of <a class="reference internal" href="Flow_Estimation.html#flow-estimation-tool"><span class="std std-ref">Flow Estimation</span></a> with the output of <a class="reference internal" href="Emission_Load.html#emission-loads"><span class="std std-ref">Emission Loads</span></a>. In this part, the load of the selected APIs is transferred to
 the river network and the concentration for <em>mean flow</em> and <em>mean low flow</em> condition is calculated.</div>
 <div class="line">In the first step, each emission point is projected onto the closest river section, where a new sub-section is created to integrate the WWTP discharge.
-In the example shown in <a class="reference internal" href="#accumulation-division-fig"><span class="std std-numref">Fig. 6</span></a>, three river sections and one WWTP are considered. The emission point is connected to river section 2, which is then divided into 2A
+In the example shown in <a class="reference internal" href="#accumulation-division-fig"><span class="std std-numref">Fig. 7</span></a>, three river sections and one WWTP are considered. The emission point is connected to river section 2, which is then divided into 2A
 and 2B. Because flow direction is from section 1 toward section 3, the load is transferred downstream to 2B and 3, while sections 1 and 2A remain unaffected by API inputs.
 From section 2B onward then, the emitted load is accumulated along the river network.</div>
 <div class="line">After splitting, the mean flow and mean low flow of section 2 (the affected section) is proportionally redistributed between 2A and 2B (the new sub-sections) according to
@@ -106,7 +107,7 @@ their relative lengths.</div>
 <figure class="align-default" id="id5">
 <span id="accumulation-division-fig"></span><img alt="_images/accumulation_division.png" src="_images/accumulation_division.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 6 </span><span class="caption-text">How the division in extra river sections at WWTPs works within the plugin.</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">How the division in extra river sections at WWTPs works within the plugin.</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>Once all WWTP emission points have been processed this way, API loads are progressively accumulated downstream along the network. Based on these accumulated loads and the
@@ -170,7 +171,7 @@ In case <strong>river_level.shp</strong> is the output of <a class="reference in
     <source src="_static/accumulation_1.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
-  <figcaption>Worflow of the <i>Accumulation</i> tool.</figcaption>
+  <figcaption>Video: Worflow of the <i>Accumulation</i> tool.</figcaption>
 </figure><p>Output data:</p>
 <ul class="simple">
 <li><p><strong>river_accumulation.shp</strong></p></li>

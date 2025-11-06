@@ -3,6 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+.. figure:: images/APRIORA_Horizontal_Standard-medium.png
+
 *******************************************
 APRIORA plugin manual (v.0.6.4)
 *******************************************

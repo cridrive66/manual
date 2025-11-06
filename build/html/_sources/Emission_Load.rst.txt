@@ -90,7 +90,7 @@ Workflow
        <source src="_static/Emission_load_1.mp4" type="video/mp4">
        Your browser does not support the video tag.
      </video>
-     <figcaption>Worflow of the <i>Emission Loads</i> tool.</figcaption>
+     <figcaption>Video: Worflow of the <i>Emission Loads</i> tool.</figcaption>
    </figure>
 
 Output data:
