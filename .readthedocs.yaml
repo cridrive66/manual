@@ -24,3 +24,9 @@ formats:
 python:
    install:
    - requirements: requirements.txt
+
+commands:
+  - git lfs install
+  - git lfs pull
+  - pip install -r requirements.txt
+  - sphinx-build -b html . _build/html
