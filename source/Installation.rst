@@ -22,23 +22,45 @@ Installation via local repository
 Since the tool is not published yet in the official QGIS repository, it is necessary to add a local repository to have access to its download.
 It is possible to do so by following these steps:
 
-1. Open QGIS and go to *Plugins* --> *Manage and Install Plugins*.
+1. Open QGIS and go to *Plugins* --> *Manage and Install Plugins* (:numref:`installation-location-fig`)
+
+.. _installation-location-fig:
 
 .. figure:: images/installation-location.png
+      
+      Location of Manage and Install Plugins.
 
 2. Go to *Settings* and click on *Add...*
 3. Under *Name* digit "APRIORA repository" (or whatever you prefer)
-4. Under *URL* insert ``https://cridrive66.github.io/APRIORA-rep/plugin.xml``
+4. Under *URL* insert ``https://cridrive66.github.io/APRIORA-rep/plugin.xml`` (:numref:`repository_1-fig`)
 5. Click on *OK*
+
+.. _repository_1-fig:
 
 .. figure:: images/Repository_1.png
       :width: 500
+      
+      How to fill the Repository details.
 
-6. Check if the *Status* of the repository is **connected**
+6. Check if the *Status* of the repository is **connected** (:numref:`repository_2-fig`)
+
+.. _repository_2-fig:
 
 .. figure:: images/Repository_2.png
 
-**add video-tutorial**
+      Status of the repository.
+
+In case you still have problems with the installation, check the video-tutorial below.
+
+.. raw:: html
+
+   <figure>
+     <video width="700" height="370" controls>
+       <source src="_static/video/installation.mp4" type="video/mp4">
+       Your browser does not support the video tag.
+     </video>
+     <figcaption>Video: How to install the APRIORA plugin.</figcaption>
+   </figure>
 
 Installation via .zip file
 --------------------------

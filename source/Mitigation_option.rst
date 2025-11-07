@@ -26,8 +26,16 @@ Upgrade the treatment type means, for example, that a WWTP is upgraded from a te
 8.	Save the edit
 9.	Re-do the workflow from :ref:`consumption-selection` until :ref:`risk-assessment` to see the updated concentration values
 
+.. raw:: html
 
-**add video-tutorial**
+   <figure>
+     <video width="700" height="370" controls>
+       <source src="_static/video/mitig_option_I.mp4" type="video/mp4">
+       Your browser does not support the video tag.
+     </video>
+     <figcaption>Video: Worflow of <i>Mitigation Option I</i>.</figcaption>
+   </figure>
+
 
 .. _optionII:
 
@@ -45,7 +53,15 @@ Another mitigation option could be to relocate the WWTP to other larger faciliti
 8.	Save the edit
 9.	Re-do the workflow from :ref:`consumption-selection` until :ref:`risk-assessment` to see the updated concentration values
 
-**add video-tutorial**
+.. raw:: html
+
+   <figure>
+     <video width="700" height="370" controls>
+       <source src="_static/video/mitig_option_II.mp4" type="video/mp4">
+       Your browser does not support the video tag.
+     </video>
+     <figcaption>Video: Worflow of <i>Mitigation Option II</i>.</figcaption>
+   </figure>
 
 
 .. _optionIII:
@@ -62,4 +78,12 @@ The steps to do this are:
 5.	Save the edit
 6.	Re-do the workflow from :ref:`accumulation` until :ref:`risk-assessment` to see the updated concentration values
 
-**add video-tutorial**
+.. raw:: html
+
+   <figure>
+     <video width="700" height="370" controls>
+       <source src="_static/video/mitig_option_III.mp4" type="video/mp4">
+       Your browser does not support the video tag.
+     </video>
+     <figcaption>Video: Worflow of <i>Mitigation Option III</i>.</figcaption>
+   </figure>

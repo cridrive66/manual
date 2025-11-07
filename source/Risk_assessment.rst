@@ -59,7 +59,7 @@ Workflow
 
    <figure>
      <video width="700" height="370" controls>
-       <source src="_static/risk_assessment.mp4" type="video/mp4">
+       <source src="_static/video/risk_assessment_2.mp4" type="video/mp4">
        Your browser does not support the video tag.
      </video>
      <figcaption>Video: Worflow of the <i>Risk Assessment</i> tool.</figcaption>
