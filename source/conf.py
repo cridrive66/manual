@@ -4,26 +4,24 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
 # Read the Docs Git LFS fix
-# import os
-# if os.environ.get('READTHEDOCS') == 'True':
-#     # Install and set up Git LFS on Read the Docs
-#     os.system("curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash")
-#     os.system("sudo apt-get install git-lfs")
-#     os.system("git lfs install")
-#     os.system("git lfs pull")
+import os
+import sys
+import logging
 
-# Read the Docs Git LFS fix
-# import os
-# import subprocess
+logger = logging.getLogger(__name__)
 
-# if os.environ.get('READTHEDOCS') == 'True':
-#     print("Setting up Git LFS on Read the Docs...")
-#     # Install Git LFS
-#     subprocess.run(['wget', 'https://github.com/git-lfs/git-lfs/releases/download/v3.5.1/git-lfs-linux-amd64-v3.5.1.tar.gz'])
-#     subprocess.run(['tar', 'xvfz', 'git-lfs-linux-amd64-v3.5.1.tar.gz'])
-#     subprocess.run(['./git-lfs', 'install'])
-#     subprocess.run(['./git-lfs', 'pull'])
-#     print("Git LFS setup complete")
+# Git LFS setup for Read the Docs
+on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
+if on_rtd:
+    if not os.path.exists('./git-lfs'):
+        print("Setting up Git LFS on Read the Docs...")
+        os.system('wget https://github.com/git-lfs/git-lfs/releases/download/v2.7.1/git-lfs-linux-amd64-v2.7.1.tar.gz')
+        os.system('tar xvfz git-lfs-linux-amd64-v2.7.1.tar.gz')
+        os.system('./git-lfs install')
+        os.system('./git-lfs fetch')
+        os.system('./git-lfs checkout')
+        print("Git LFS setup complete")
+
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
