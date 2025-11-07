@@ -10,10 +10,10 @@ build:
   tools:
     python: "3.13"
 
-  # add Git LFS setup here
-  commands:
-  - git lfs install
-  - git lfs pull
+  # # add Git LFS setup here
+  # commands:
+  # - git lfs install
+  # - git lfs pull
   
 # Build documentation in the "docs/" directory with Sphinx
 sphinx:

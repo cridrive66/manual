@@ -13,17 +13,17 @@
 #     os.system("git lfs pull")
 
 # Read the Docs Git LFS fix
-import os
-import subprocess
+# import os
+# import subprocess
 
-if os.environ.get('READTHEDOCS') == 'True':
-    print("Setting up Git LFS on Read the Docs...")
-    # Install Git LFS
-    subprocess.run(['wget', 'https://github.com/git-lfs/git-lfs/releases/download/v3.5.1/git-lfs-linux-amd64-v3.5.1.tar.gz'])
-    subprocess.run(['tar', 'xvfz', 'git-lfs-linux-amd64-v3.5.1.tar.gz'])
-    subprocess.run(['./git-lfs', 'install'])
-    subprocess.run(['./git-lfs', 'pull'])
-    print("Git LFS setup complete")
+# if os.environ.get('READTHEDOCS') == 'True':
+#     print("Setting up Git LFS on Read the Docs...")
+#     # Install Git LFS
+#     subprocess.run(['wget', 'https://github.com/git-lfs/git-lfs/releases/download/v3.5.1/git-lfs-linux-amd64-v3.5.1.tar.gz'])
+#     subprocess.run(['tar', 'xvfz', 'git-lfs-linux-amd64-v3.5.1.tar.gz'])
+#     subprocess.run(['./git-lfs', 'install'])
+#     subprocess.run(['./git-lfs', 'pull'])
+#     print("Git LFS setup complete")
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
