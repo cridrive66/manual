@@ -3,6 +3,15 @@
 # For the full list of built-in configuration values, see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
+# Read the Docs Git LFS fix
+import os
+if os.environ.get('READTHEDOCS') == 'True':
+    # Install and set up Git LFS on Read the Docs
+    os.system("curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash")
+    os.system("sudo apt-get install git-lfs")
+    os.system("git lfs install")
+    os.system("git lfs pull")
+
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
