@@ -50,6 +50,9 @@ It is possible to do so by following these steps:
 
       Status of the repository.
 
+7. Go to *All* and digit "APRIORA" in the search bar.
+8. Click on *Install Plugin*
+
 In case you still have problems with the installation, check the video-tutorial below.
 
 .. raw:: html
