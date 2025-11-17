@@ -6,21 +6,24 @@
 # Read the Docs Git LFS fix
 import os
 import sys
-import logging
-
-logger = logging.getLogger(__name__)
 
 # Git LFS setup for Read the Docs
 on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 if on_rtd:
-    if not os.path.exists('./git-lfs'):
-        print("Setting up Git LFS on Read the Docs...")
-        os.system('wget https://github.com/git-lfs/git-lfs/releases/download/v2.7.1/git-lfs-linux-amd64-v2.7.1.tar.gz')
-        os.system('tar xvfz git-lfs-linux-amd64-v2.7.1.tar.gz')
+    try:
+        print("Setting up Git LFS via Python package...")
+        import git_lfs
+        git_lfs.fetch(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+        print("Git LFS fetch completed successfully")
+    except Exception as e:
+        print(f"Git LFS Python package failed: {e}")
+        # Fallback to system method
+        print("Trying fallback system method...")
+        os.system('wget https://github.com/git-lfs/git-lfs/releases/download/v3.5.1/git-lfs-linux-amd64-v3.5.1.tar.gz')
+        os.system('tar xvfz git-lfs-linux-amd64-v3.5.1.tar.gz')
         os.system('./git-lfs install')
         os.system('./git-lfs fetch')
         os.system('./git-lfs checkout')
-        print("Git LFS setup complete")
 
 
 # -- Project information -----------------------------------------------------
