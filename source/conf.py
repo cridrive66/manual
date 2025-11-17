@@ -4,36 +4,19 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
 # Read the Docs Git LFS fix
-import os
-import sys
 
-# Git LFS setup for Read the Docs
+import os
+import subprocess
+
 on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 if on_rtd:
-    print("=== READTHEDOCS GIT LFS SETUP ===")
-    
-    # Method 1: Use system Git LFS if available
-    print("Method 1: Trying system Git LFS...")
-    lfs_result = os.system('git lfs pull')
-    
-    if lfs_result != 0:
-        # Method 2: Manual Git LFS binary download and setup
-        print("Method 2: Downloading Git LFS binary...")
-        os.system('wget -q https://github.com/git-lfs/git-lfs/releases/download/v3.5.1/git-lfs-linux-amd64-v3.5.1.tar.gz')
-        os.system('tar -xzf git-lfs-linux-amd64-v3.5.1.tar.gz')
-        os.system('cd git-lfs-3.5.1 && ./install.sh')
-        os.system('git lfs pull')
-        print("Git LFS binary setup complete")
-    
-    # Verify files were downloaded
-    if os.path.exists('_static/video'):
-        video_files = os.listdir('_static/video')
-        print(f"Video directory contents: {video_files}")
-    else:
-        print("WARNING: _static/video directory not found!")
-    
-    print("=== GIT LFS SETUP COMPLETE ===")
-
+    print("Pulling Git LFS files...")
+    result = subprocess.run(['git', 'lfs', 'pull'], capture_output=True, text=True)
+    print(f"Git LFS result: {result.returncode}")
+    if result.stdout:
+        print(f"stdout: {result.stdout}")
+    if result.stderr:
+        print(f"stderr: {result.stderr}")
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
