@@ -59,7 +59,7 @@ In case you still have problems with the installation, check the video-tutorial 
 
    <figure>
      <video width="700" height="370" controls>
-       <source src="_static/video/installation_nv.mp4" type="video/mp4">
+       <source src="_static/video/installation.mp4" type="video/mp4">
        Your browser does not support the video tag.
      </video>
      <figcaption>Video: How to install the APRIORA plugin.</figcaption>
