@@ -6,7 +6,7 @@
 .. figure:: images/APRIORA_Horizontal_Standard-medium.png
 
 *******************************************
-APRIORA plugin manual (v.0.6.5)
+APRIORA plugin manual (v.0.6.6)
 *******************************************
 
 .. important::

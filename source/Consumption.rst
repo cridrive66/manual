@@ -1,37 +1,44 @@
-.. _consumption-selection:
+.. _API-parameter-selection:
 
-Consumption Selection
-----------------------
+API parameter selection
+=======================
 This tool is giving the user the access to the APRIORA's internal database related to consumption data, removal rates and PNEC values.
-Since it is not a processing tool, the user cannot find it under the *Processing Toolbox*. It is displayed instead under *Plugins* --> *Consumption Selection* 
-(:numref:`consumption_selection_menu-fig`) or in the Menu Toolbar (:numref:`consumption_selection-fig`).
+Since it is not a processing tool, the user cannot find it under the *Processing Toolbox*. It is displayed instead under *Plugins* --> *API parameter selection* 
+(:numref:`API_parameter_selection_menu-fig`) or in the Menu Toolbar (:numref:`consumption_selection-fig`).
 
-.. _consumption_selection_menu-fig:
+.. _API_parameter_selection_menu-fig:
 
-.. figure:: images/consumption_selection_menu.png
+.. figure:: images/API_parameter_selection_menu.png
   :width: 500
 
-  How to find *Consumption Selection* tool under *Plugins*.
+  How to find *API parameter selection* tool under *Plugins*.
 
 .. _consumption_selection-fig:
 
 .. figure:: images/consumption_selection.png
   :width: 300
 
-  Location of the *Consumption Selection* tool in the Menu Toolbar.
+  Location of the *API parameter selection* tool in the Menu Toolbar.
 
     
 The tool contains 4 different windows:
 
-* Consumption data
-* Removal rate
-* Custom table
-* PNEC values
+* :ref:`consumption_data`
+* :ref:`removal_rate`
+* :ref:`custom_table`
+* :ref:`PNEC_values`
 
 In the next paragraphs, the functionalities of each windows are described. More detailed instruction on how to use them can be found in the video-tutorial 
 in the **Workflow** section below.
 
-| **Consumption data**
+.. important::
+  In the following screenshots and video-tutorials, the *API parameter selection* is called *Consumption Selection*. The name comes from the version 0.6.5 of the tool.
+  In version 0.6.6, the tool was renamed to *API parameter selection*. Updated screenshots and video-tutorials will be uploaded soon.
+
+.. _consumption_data:
+
+Consumption data
+----------------
 | Here the user can explore the consumption data related to several substances, with different spatial and temporal coverage (:numref:`consumption_interface-fig`). The consumption data is expressed in 
  *mg/inh./a* and it is already including the excretion rate from the human body. When a regional coverage is not available, it is marked as "-" and the national
  value is considered instead. The consumption values are calculated with the formula :math:numref:`consumption_equation`.
@@ -60,59 +67,17 @@ With:
 
 .. figure:: images/consumption_interface.png
 
-  Interface of the "Consumption data" window within the Consumption Selection tool. 
-
-| **Removal rate**
-| This window (:numref:`removal_interface-fig`) contains a table with the removal rates of different APIs for the 4 different types of treatment: TC1 (primary treatment), screening and sedimentation; TC2 
- (secondary treatment), aeration and bacterial digestion; TC3 (tertiary treatment), nutrient removal, filtration and chlorine/UV; TC4 (quaternary treatment), activated
- carbon and reverse osmosis. This table provides cumulative removal rates for each treatment stage. This means the value for a given stage (e.g., TC3) already includes 
- the combined removal efficiency of all previous stages (TC1 and TC2). Therefore the calculation is direct and not sequential.
-| With a similar logic like before, the user can add a new substance (or edit the current value) by clicking on the "+" icon. After making a change, remember to click
- on the save icon.
-
-.. _removal_interface-fig:
-
-.. figure:: images/removal_interface.png
-
-  Interface of the "Removal rate" window within the Consumption Selection tool. 
-
-| **Custom table**
-| In case the user would like to further customize the input data like consumption and removal rates at a more detailed level, here it is possible to do it (:numref:`custom_table_interface-fig`).
- By selecting the WWTPs shapefile and the correct fields for ID, name and technical class, it is possible to display the consumption values and removal rates for each WWTPs included in the 
- shapefile. By doing so, the user can edit a consumption values or a removal rate for that specific WWTP. After doing any edit, click on the *Save* button. 
-
-.. _custom_table_interface-fig:
-
-.. figure:: images/custom_table_interface.png
-
-  Interface of the "Custom table" window within the Consumption Selection tool.
-
-| **PNEC values**
-| This window (:numref:`PNEC_interface-fig`) contains a table with the PNEC values of different APIs expressed in ng/L. With a similar logic like before, the user can add a new substance 
- (or edit the current value) by clicking on the "+" icon. After making a change, remember to click on the save icon.
- As mere information, limit of quantification (LOQ) of two different laboratories are included: Kristianstad University (Sweden) and SYKE (Finland).
-
-.. _PNEC_interface-fig:
-
-.. figure:: images/PNEC_interface.png
-  :width: 600
-
-  Interface of the "PNEC values" window within the Consumption Selection tool.
+  Interface of the "Consumption data" window within the API parameter selection tool. 
 
 Input data
 ^^^^^^^^^^
-For this tool no input data is required. All the necessary input data (e.g., consumption values, removal rates, PNEC values) are already provided. If the user would like 
-to add their own input data, it is possible to do so as previously described. In case the user would like to change consumption values and removal rates at the WWTPs emission 
-points, it is necessary to add in the QGIS project a shapefile containing emission points of WWTPs with fields dedicated to id, WWTP name, connected inhabitants and 
-technical class (number from 1 to 4).
-
-(write something in case the user has a table that wants to integrate)
+For this tool no input data is required. All the necessary input data (consumption values) are already provided. In case the user would like to add their own input data,
+it is possible to do so.
 
 Workflow
 ^^^^^^^^
-**Consumption data**
 
-1. Click on the *Consumption Selection* icon in the menu toolbar or go under *Plugins* --> *Consumption Selection*
+1. Click on the *5 - API parameter selection* icon in the menu toolbar or go under *Plugins* --> *5 - API parameter selection*
 2. Go on the "Consumption data" window
 3. Explore the database and find the APIs that you are interested in (e.g., Carbamazepine and Diclofenac for 2023, Germany, MV)
 4. Select the substances by filling out correctly the "API name", "Year", "Country" and "Region" fields
@@ -136,10 +101,33 @@ In case the user would like to add custom substances:
        <source src="_static/video/Consumption_selection_2.mp4" type="video/mp4">
        Your browser does not support the video tag.
      </video>
-     <figcaption>Video: Worflow of <i>Consumption data</i> window within <i>Consumption Selection</i> tool.</figcaption>
+     <figcaption>Video: Worflow of <i>Consumption data</i> window within <i>API parameter selection</i> tool.</figcaption>
    </figure>
 
-**Removal rate**
+.. _removal_rate:
+
+Removal rate
+------------
+| This window (:numref:`removal_interface-fig`) contains a table with the removal rates of different APIs for the 4 different types of treatment: TC1 (primary treatment), screening and sedimentation; TC2 
+ (secondary treatment), aeration and bacterial digestion; TC3 (tertiary treatment), nutrient removal, filtration and chlorine/UV; TC4 (quaternary treatment), activated
+ carbon and reverse osmosis. This table provides cumulative removal rates for each treatment stage. This means the value for a given stage (e.g., TC3) already includes 
+ the combined removal efficiency of all previous stages (TC1 and TC2). Therefore the calculation is direct and not sequential.
+| With a similar logic like before, the user can add a new substance (or edit the current value) by clicking on the "+" icon. After making a change, remember to click
+ on the save icon.
+
+.. _removal_interface-fig:
+
+.. figure:: images/removal_interface.png
+
+  Interface of the "Removal rate" window within the API parameter selection tool. 
+
+Input data
+^^^^^^^^^^
+For this tool no input data is required. All the necessary input data (removal rates) are already provided. In case the user would like to add their own input data,
+it is possible to do so.
+
+Workflow
+^^^^^^^^
 
 1. Go on the "Removal rate" window
 2. Check if the values for the different APIs and different technical classes are correct
@@ -154,10 +142,36 @@ In case the user would like to add custom substances:
        <source src="_static/video/removal_rate_2.mp4" type="video/mp4">
        Your browser does not support the video tag.
      </video>
-     <figcaption>Video: Worflow of <i>Removal rate</i> window within <i>Consumption Selection</i> tool.</figcaption>
+     <figcaption>Video: Worflow of <i>Removal rate</i> window within <i>API parameter selection</i> tool.</figcaption>
    </figure>
 
-**Custom table**
+.. _custom_table:
+
+Custom table
+------------
+| In case the user would like to further customize the input data like consumption and removal rates at a more detailed level, here it is possible to do it (:numref:`custom_table_interface-fig`).
+ By selecting the WWTPs shapefile and the correct fields for ID, name and technical class, it is possible to display the consumption values and removal rates for each WWTPs included in the 
+ shapefile. By doing so, the user can edit a consumption values or a removal rate for that specific WWTP. After doing any edit, click on the *Save* button. 
+
+.. _custom_table_interface-fig:
+
+.. figure:: images/custom_table_interface.png
+
+  Interface of the "Custom table" window within the API parameter selection tool.
+
+Input data
+^^^^^^^^^^
+One input data is necessary for this tool:
+
+* **WWTP.shp**
+
+The **WWTP.shp** is a point shapefile containing the emission point of the WWTPs as geometry and important information of the facilities in the attribute table. The required
+information are: ID and name of the WWTP; number of connected inhabitant; number representing the type of treatment (1=primary, 2=secondary, 3=tertiary, 4=quaternary). An
+example of these information can be summarized by :numref:`WWTP-attribute-table`.
+
+
+Workflow
+^^^^^^^^
 
 1. Go on the "Custom table" window
 2. Select the WWTP shapefile and specify the field for ID, name and technical class. In case you cannot find the shapefile between the available ones, click on the reload button.
@@ -172,10 +186,31 @@ In case the user would like to add custom substances:
        <source src="_static/video/custom_table_2.mp4" type="video/mp4">
        Your browser does not support the video tag.
      </video>
-     <figcaption>Video: Worflow of <i>Custom table</i> window within <i>Consumption Selection</i> tool.</figcaption>
+     <figcaption>Video: Worflow of <i>Custom table</i> window within <i>API parameter selection</i> tool.</figcaption>
    </figure>
 
-**PNEC values**
+.. _PNEC_values:
+
+PNEC values
+-----------
+| This window (:numref:`PNEC_interface-fig`) contains a table with the PNEC values of different APIs expressed in ng/L. With a similar logic like before, the user can add a new substance 
+ (or edit the current value) by clicking on the "+" icon. After making a change, remember to click on the save icon.
+ As mere information, limit of quantification (LOQ) of two different laboratories are included: Kristianstad University (Sweden) and SYKE (Finland).
+
+.. _PNEC_interface-fig:
+
+.. figure:: images/PNEC_interface.png
+  :width: 600
+
+  Interface of the "PNEC values" window within the API parameter selection tool.
+
+Input data
+^^^^^^^^^^
+For this tool no input data is required. All the necessary input data (PNEC values) are already provided. In case the user would like to add their own input data,
+it is possible to do so.
+
+Workflow
+^^^^^^^^
 
 1. Go on the "PNEC values" window
 2. Check if the values for the different APIs are correct
@@ -190,5 +225,5 @@ In case the user would like to add custom substances:
        <source src="_static/video/PNEC_2.mp4" type="video/mp4">
        Your browser does not support the video tag.
      </video>
-     <figcaption>Video: Worflow of <i>PNEC values</i> window within <i>Consumption Selection</i> tool.</figcaption>
+     <figcaption>Video: Worflow of <i>PNEC values</i> window within <i>API parameter selection</i> tool.</figcaption>
    </figure>

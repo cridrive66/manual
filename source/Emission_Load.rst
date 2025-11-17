@@ -72,14 +72,14 @@ Workflow
 ^^^^^^^^
 
 1. Add the input data to the project by clicking on "Layer -> Add Layer -> Add Vector Layer"
-2. Go in the Processing Toolbox and look for the *APRIORA* plugin. Click on *API emission* and open *5 - Emission Loads*
+2. Go in the Processing Toolbox and look for the *APRIORA* plugin. Click on *API emission* and open *6 - Emission Loads*
 3. Choose **WWTP.shp** as input for *Emission Points of WWTP*
 4. Select the correct field of **WWTP.shp** for *ID*, *Name*, *Connected Inhabitants* and *Technology Class*
-5. If you created a custom table from the *Consumption Selection* tool, flag the next box, otherwise leave it empty
+5. If you created a custom table from the *API parameter selection* tool, flag the next box, otherwise leave it empty
 
 .. important::
     Under *Current API Selection* you can see the substances previously selected. This window is only displaying the selection, if you want
-    to change the selection go back to :ref:`consumption-selection`.
+    to change the selection go back to :ref:`API-parameter-selection`.
 
 6. Click on *Run*
 

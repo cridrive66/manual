@@ -49,10 +49,10 @@ Workflow
 ^^^^^^^^
 
 1. If not already in the project, add the input data by clicking on "Layer -> Add Layer -> Add Vector Layer"
-2. Go in the Processing Toolbox and look for the *APRIORA* plugin. Click on *API emission* and open *7 - Risk Assessment*
+2. Go in the Processing Toolbox and look for the *APRIORA* plugin. Click on *API emission* and open *8 - Risk Assessment*
 3. Choose **river_accumulation.shp** as input for *River network*
 4. Select the fields containing the concentration of APIs for the risk assessment. This selection should include only columns containing concentrations in ng/L.
-5. If you added custom PNEC values from the *Consumption Selection* tool, flag the next box, otherwise leave it empty
+5. If you added custom PNEC values from the *API parameter selection* tool, flag the next box, otherwise leave it empty
 6. Click on *Run*
 
 .. raw:: html

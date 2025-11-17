@@ -60,7 +60,7 @@ Workflow
 ^^^^^^^^
 
 1. Add the input data to the project by clicking on "Layer -> Add Layer -> Add Vector Layer"
-2. Go in the Processing Toolbox and look for the *APRIORA* plugin. Click on *API emission* and open *6 - Accumulation*
+2. Go in the Processing Toolbox and look for the *APRIORA* plugin. Click on *API emission* and open *7 - Accumulation*
 3. Choose **emission_loads.shp** as input for *API load*
 4. Select the fields containing the APIs to accumulate. This selection should include only columns containing load of APIs in kg/a.
 5. Choose **river_level.shp** as input for *River network*
