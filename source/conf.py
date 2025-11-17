@@ -5,18 +5,18 @@
 
 # Read the Docs Git LFS fix
 
-import os
-import subprocess
+# import os
+# import subprocess
 
-on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
-if on_rtd:
-    print("Pulling Git LFS files...")
-    result = subprocess.run(['git', 'lfs', 'pull'], capture_output=True, text=True)
-    print(f"Git LFS result: {result.returncode}")
-    if result.stdout:
-        print(f"stdout: {result.stdout}")
-    if result.stderr:
-        print(f"stderr: {result.stderr}")
+# on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
+# if on_rtd:
+#     print("Pulling Git LFS files...")
+#     result = subprocess.run(['git', 'lfs', 'pull'], capture_output=True, text=True)
+#     print(f"Git LFS result: {result.returncode}")
+#     if result.stdout:
+#         print(f"stdout: {result.stdout}")
+#     if result.stderr:
+#         print(f"stderr: {result.stderr}")
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
@@ -53,16 +53,3 @@ html_theme_options = {
 
 html_static_path = ['_static']
 html_css_files = ["css/custom.css"]
-html_extra_path = ['_static/video']
-
-# Debug: Check if videos are accessible
-if on_rtd:
-    print("Checking video paths...")
-    video_path = '_static/video/installation.mp4'
-    if os.path.exists(video_path):
-        print(f"✅ Video exists: {video_path}")
-        print(f"Video size: {os.path.getsize(video_path)} bytes")
-    else:
-        print(f"❌ Video NOT found: {video_path}")
-        print(f"Current directory: {os.getcwd()}")
-        print(f"Directory contents: {os.listdir('.')}")
