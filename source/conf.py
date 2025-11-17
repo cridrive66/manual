@@ -10,20 +10,29 @@ import sys
 # Git LFS setup for Read the Docs
 on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 if on_rtd:
-    try:
-        print("Setting up Git LFS via Python package...")
-        import git_lfs
-        git_lfs.fetch(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-        print("Git LFS fetch completed successfully")
-    except Exception as e:
-        print(f"Git LFS Python package failed: {e}")
-        # Fallback to system method
-        print("Trying fallback system method...")
-        os.system('wget https://github.com/git-lfs/git-lfs/releases/download/v3.5.1/git-lfs-linux-amd64-v3.5.1.tar.gz')
-        os.system('tar xvfz git-lfs-linux-amd64-v3.5.1.tar.gz')
-        os.system('./git-lfs install')
-        os.system('./git-lfs fetch')
-        os.system('./git-lfs checkout')
+    print("=== READTHEDOCS GIT LFS SETUP ===")
+    
+    # Method 1: Use system Git LFS if available
+    print("Method 1: Trying system Git LFS...")
+    lfs_result = os.system('git lfs pull')
+    
+    if lfs_result != 0:
+        # Method 2: Manual Git LFS binary download and setup
+        print("Method 2: Downloading Git LFS binary...")
+        os.system('wget -q https://github.com/git-lfs/git-lfs/releases/download/v3.5.1/git-lfs-linux-amd64-v3.5.1.tar.gz')
+        os.system('tar -xzf git-lfs-linux-amd64-v3.5.1.tar.gz')
+        os.system('cd git-lfs-3.5.1 && ./install.sh')
+        os.system('git lfs pull')
+        print("Git LFS binary setup complete")
+    
+    # Verify files were downloaded
+    if os.path.exists('_static/video'):
+        video_files = os.listdir('_static/video')
+        print(f"Video directory contents: {video_files}")
+    else:
+        print("WARNING: _static/video directory not found!")
+    
+    print("=== GIT LFS SETUP COMPLETE ===")
 
 
 # -- Project information -----------------------------------------------------

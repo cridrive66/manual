@@ -1,4 +1,3 @@
 sphinx
 sphinx-rtd-theme
 sphinxcontrib-video
-git-lfs
