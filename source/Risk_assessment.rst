@@ -29,7 +29,7 @@ user a quick, comprehensive view of the situation. The Risk Quotient is calculat
 
 With:
 
-- :math:`RQ` = Risk Coefficient [-] 
+- :math:`RQ` = Risk Quotient [-] 
 - :math:`x` = sum of ERA values > 1 [-]
 - :math:`s` = height parameter [-]
 - :math:`k` = scale factor [-]
