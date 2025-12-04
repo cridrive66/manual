@@ -24,11 +24,11 @@ Please find instructions on how to install the plugin in the :ref:`Installation`
 
 Support, contributing and testing
 ---------------------------------
-Please contribute using **Github (link `<https://github.com/cridrive66/APRIORA>`_)**. Create a branch, add commits and *open a pull request*.
+Please contribute using **Github (`link <https://github.com/cridrive66/APRIORA>`_)**. Create a branch, add commits and *open a pull request*.
 
 Reporting bugs or suggesting improvements
 ^^^^^^^^^^^^^^
-If you find a bug in the APRIORA plugin, please open a new issue (issues `<https://github.com/cridrive66/APRIORA/issues>`_) and tag it "bug".
+If you find a bug in the APRIORA plugin, please open a new issue (`issues <https://github.com/cridrive66/APRIORA/issues>`_) and tag it "bug".
 If you want to suggest a new feature or an improvement of a current feature, please open a new issue and tag it "improvement".
 For both cases, you can always send an email to cristiano.guidi2@uni-rostock.de.
 
