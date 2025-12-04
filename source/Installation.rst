@@ -67,7 +67,7 @@ In case you still have problems with the installation, check the video-tutorial 
 
 Installation via .zip file
 --------------------------
-The plugin can also be installed by downloading the .zip file from the Github repository (insert link).
+The plugin can also be installed by downloading the .zip file from the Github repository (link `<https://github.com/cridrive66/APRIORA>`_).
 In order to do this:
 
 1. Download the .zip file from Github
