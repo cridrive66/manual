@@ -36,6 +36,8 @@ Latest changhes
 ---------------
 This section contains the most recent changes and updates to the plugin.
 
+* v.0.6.7: Accumulation function was not correctly distribute the flow to upstream and downstream sections after the split. The function was ordering the sections by river lengths.
+Problem fixed by ordering the sections by their NET_ID.
 * v.0.6.6: "Consumption Selection" tool changed name to "5 - API parameter selection". Added description to API emission tools.
 * v.0.6.5: update Consumption and Removal Rate dataset. Fixed some typos. Added compatibility for GEOS version < 3.10.
 * v.0.6.4: Fixed error: Feature (3) from “subcatchment_layer_copy” has invalid geometry.

@@ -17,10 +17,3 @@ This group of tools is divided in 4 different processes:
   Risk_assessment
 
 Each tool is documented in the following sections with explanations of its functionality and step-by-step tutorials.
-
-.. _dummy-data:
-
-Dummy data
-----------
-You can find the data used for making the video-tutorial at this `link <https://unibox.uni-rostock.de/getlink/fi5bof6ehP5UMsV5VXQnfF/demo%20dataset>`_. 
-Feel free to download them and try to replicate the workflow.
