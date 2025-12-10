@@ -18,7 +18,7 @@ APRIORA plugin manual (v.0.6.7)
    
    Introduction
    Installation
-   dummy-data
+   Dummy_data
    Flow_Estimation
    API_emission
    Mitigation_option
