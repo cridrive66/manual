@@ -6,7 +6,7 @@
 .. figure:: images/APRIORA_Horizontal_Standard-medium.png
 
 *******************************************
-APRIORA plugin manual (v.0.6.6)
+APRIORA plugin manual (v.0.6.7)
 *******************************************
 
 .. important::
@@ -18,6 +18,7 @@ APRIORA plugin manual (v.0.6.6)
    
    Introduction
    Installation
+   dummy-data
    Flow_Estimation
    API_emission
    Mitigation_option
@@ -27,4 +28,5 @@ APRIORA plugin manual (v.0.6.6)
 
 Credits
 -------
-The project leading to this application has received funding from ...
+The project leading to this application is funded by the Interreg Baltic Sea Region Programme. Co-founded by the European Union (ERDF),
+this #MadeWithInterreg project helps to remove pollutants from our waters.
