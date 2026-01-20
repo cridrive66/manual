@@ -27,7 +27,7 @@ Support, contributing and testing
 Please contribute using **Github (`link <https://github.com/cridrive66/APRIORA>`_)**. Create a branch, add commits and *open a pull request*.
 
 Reporting bugs or suggesting improvements
-^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 If you find a bug in the APRIORA plugin, please open a new issue (`issues <https://github.com/cridrive66/APRIORA/issues>`_) and tag it "bug".
 If you want to suggest a new feature or an improvement of a current feature, please open a new issue and tag it "improvement".
 For both cases, you can always send an email to cristiano.guidi2@uni-rostock.de.
@@ -36,8 +36,11 @@ Latest changhes
 ---------------
 This section contains the most recent changes and updates to the plugin.
 
+*   v.0.6.9: Fixed error in *6 - Emission Loads*. When a new value was added in *5 - API parameter selection*, 
+    algorithm had problems retrieving the new value and was referring to the original one. Now fixed.
+* v.0.6.8: Added function in *7 - Accumulation* to calculate concentration of APIs at monitoring stations. 
 * v.0.6.7: Accumulation function was not correctly distribute the flow to upstream and downstream sections after the split. The function was ordering the sections by river lengths. Problem fixed by ordering the sections by their NET_ID.
-* v.0.6.6: "Consumption Selection" tool changed name to "5 - API parameter selection". Added description to API emission tools.
+* v.0.6.6: *Consumption Selection* tool changed name to *5 - API parameter selection*. Added description to API emission tools.
 * v.0.6.5: update Consumption and Removal Rate dataset. Fixed some typos. Added compatibility for GEOS version < 3.10.
 * v.0.6.4: Fixed error: Feature (3) from “subcatchment_layer_copy” has invalid geometry.
 * v.0.6.3: Fixed error: object has no attribute 'parameterAsStrings'.
