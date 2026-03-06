@@ -24,7 +24,7 @@ Please find instructions on how to install the plugin in the :ref:`Installation`
 
 Support, contributing and testing
 ---------------------------------
-Please contribute using **Github (`link <https://github.com/cridrive66/APRIORA>`_)**. Create a branch, add commits and *open a pull request*.
+Please contribute using Github (`link <https://github.com/cridrive66/APRIORA>`_). Create a branch, add commits and *open a pull request*.
 
 Reporting bugs or suggesting improvements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -36,6 +36,17 @@ Latest changhes
 ---------------
 This section contains the most recent changes and updates to the plugin.
 
+*   v.0.7.2: *7 - Accumulation* is now compatible with polygon river networks. In the previous versions it was necessary to 
+    provide the river network as a multi-line shapefile. In the Finnish catchment with the Vemala model this caused some issues
+    since the output of the hydrological model is a polygon shapefile. Because of this reason, the tool was adapted to accept 
+    polygon shapefile of the river network as input. Additionally, *8 - Risk Assessment* is now compatible with polygon river 
+    networks too.
+*   v.0.7.1: *5 - API parameter selection* is moved from the menu toolbar to the processing toolbox like the other 7 tools. The 
+    output of monitoring point from *7 - Accumulation* now contains also the accumulated load of APIs and not just the concentration
+    values. The river layer output from *8 - Risk Assessment* now contains the NET_ID column for each river section. This addition
+    makes easier to identify the river sections at risk.
+*   v.0.7.0: in *7 - Accumulation* is not necessary anymore to provide "mean flow" and "mean low flow" values for the individual 
+    section, but only the accumulated value.
 *   v.0.6.9: Fixed error in *6 - Emission Loads*. When a new value was added in *5 - API parameter selection*, 
     algorithm had problems retrieving the new value and was referring to the original one. Now fixed.
 * v.0.6.8: Added function in *7 - Accumulation* to calculate concentration of APIs at monitoring stations. 

@@ -40,11 +40,11 @@ Input data
 ^^^^^^^^^^
 Two input data are required for this tool:
 
-* **emission_loads.shp**
-* **river_level.shp**
+* **emission_loads.shp** (from :ref:`emission-loads`)
+* **river_level.shp** (from :ref:`flow-estimation-tool`)
 
-The **emission_loads.shp** is the output of :ref:`emission-loads` while **river_level.shp** is the output of :ref:`flow-estimation-tool`. In case the user already has
-regionalized flow data, going through the :ref:`Flow_Estimation` set of tools is not necessary. The important fields that should be in **river_level.shp** are:
+In case the user already has regionalized flow data, going through the :ref:`Flow_Estimation` set of tools is not necessary. 
+The important fields that should be in **river_level.shp** are:
 
 - ID field: a column with a unique ID for each river section
 - Next field: a column with the ID of the downstream river section 
@@ -79,7 +79,7 @@ Workflow
 
    <figure>
      <video width="700" height="370" controls>
-       <source src="_static/video/accumulation_2.mp4" type="video/mp4">
+       <source src="../_static/video/accumulation_2.mp4" type="video/mp4">
        Your browser does not support the video tag.
      </video>
      <figcaption>Video: Worflow of the <i>Accumulation</i> tool.</figcaption>

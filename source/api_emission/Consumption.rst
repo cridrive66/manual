@@ -98,7 +98,7 @@ In case the user would like to add custom substances:
 
    <figure>
      <video width="700" height="370" controls>
-       <source src="_static/video/Consumption_selection_2.mp4" type="video/mp4">
+       <source src="../_static/video/Consumption_selection_2.mp4" type="video/mp4">
        Your browser does not support the video tag.
      </video>
      <figcaption>Video: Worflow of <i>Consumption data</i> window within <i>API parameter selection</i> tool.</figcaption>
@@ -139,7 +139,7 @@ Workflow
 
    <figure>
      <video width="700" height="370" controls>
-       <source src="_static/video/removal_rate_2.mp4" type="video/mp4">
+       <source src="../_static/video/removal_rate_2.mp4" type="video/mp4">
        Your browser does not support the video tag.
      </video>
      <figcaption>Video: Worflow of <i>Removal rate</i> window within <i>API parameter selection</i> tool.</figcaption>
@@ -183,7 +183,7 @@ Workflow
 
    <figure>
      <video width="700" height="370" controls>
-       <source src="_static/video/custom_table_2.mp4" type="video/mp4">
+       <source src="../_static/video/custom_table_2.mp4" type="video/mp4">
        Your browser does not support the video tag.
      </video>
      <figcaption>Video: Worflow of <i>Custom table</i> window within <i>API parameter selection</i> tool.</figcaption>
@@ -222,7 +222,7 @@ Workflow
 
    <figure>
      <video width="700" height="370" controls>
-       <source src="_static/video/PNEC_2.mp4" type="video/mp4">
+       <source src="../_static/video/PNEC_2.mp4" type="video/mp4">
        Your browser does not support the video tag.
      </video>
      <figcaption>Video: Worflow of <i>PNEC values</i> window within <i>API parameter selection</i> tool.</figcaption>

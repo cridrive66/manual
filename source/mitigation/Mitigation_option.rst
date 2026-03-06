@@ -30,7 +30,7 @@ Upgrade the treatment type means, for example, that a WWTP is upgraded from a te
 
    <figure>
      <video width="700" height="370" controls>
-       <source src="_static/video/mitig_option_I.mp4" type="video/mp4">
+       <source src="../_static/video/mitig_option_I.mp4" type="video/mp4">
        Your browser does not support the video tag.
      </video>
      <figcaption>Video: Worflow of <i>Mitigation Option I</i>.</figcaption>
@@ -57,7 +57,7 @@ Another mitigation option could be to relocate the WWTP to other larger faciliti
 
    <figure>
      <video width="700" height="370" controls>
-       <source src="_static/video/mitig_option_II.mp4" type="video/mp4">
+       <source src="../_static/video/mitig_option_II.mp4" type="video/mp4">
        Your browser does not support the video tag.
      </video>
      <figcaption>Video: Worflow of <i>Mitigation Option II</i>.</figcaption>
@@ -82,7 +82,7 @@ The steps to do this are:
 
    <figure>
      <video width="700" height="370" controls>
-       <source src="_static/video/mitig_option_III.mp4" type="video/mp4">
+       <source src="../_static/video/mitig_option_III.mp4" type="video/mp4">
        Your browser does not support the video tag.
      </video>
      <figcaption>Video: Worflow of <i>Mitigation Option III</i>.</figcaption>

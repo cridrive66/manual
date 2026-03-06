@@ -6,7 +6,7 @@
 .. figure:: images/APRIORA_Horizontal_Standard-medium.png
 
 *******************************************
-APRIORA plugin manual (v.0.6.7)
+APRIORA plugin manual (v.0.7.2)
 *******************************************
 
 .. important::
@@ -16,14 +16,14 @@ APRIORA plugin manual (v.0.6.7)
    :maxdepth: 2
    :caption: Content
    
-   Introduction
-   Installation
-   Dummy_data
-   Flow_Estimation
-   API_emission
-   Mitigation_option
-   Troubleshooting
-   License
+   chapters/Introduction
+   chapters/Installation
+   chapters/Dummy_data
+   flow_estimation/flow_estimation
+   api_emission/api_emission
+   mitigation/Mitigation_option
+   chapters/Troubleshooting
+   chapters/License
 
 
 Credits

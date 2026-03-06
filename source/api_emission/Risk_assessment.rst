@@ -40,10 +40,10 @@ Input data
 ^^^^^^^^^^
 Only one input file is necessary:
 
-* **river_accumulation.shp**
+* **river_accumulation.shp** (from :ref:`accumulation`)
 
-This file is the output of the :ref:`accumulation` tool. The key columns for this process are the ones containing concentration values. For each river section,
-formula :math:numref:`ERA_equation` is applied and a PNEC value is calculated. 
+The key columns for this process are the ones containing concentration values. For each river section, formula :math:numref:`ERA_equation` is 
+applied and a PNEC value is calculated. 
 
 Workflow
 ^^^^^^^^
@@ -59,7 +59,7 @@ Workflow
 
    <figure>
      <video width="700" height="370" controls>
-       <source src="_static/video/risk_assessment_2.mp4" type="video/mp4">
+       <source src="../_static/video/risk_assessment_2.mp4" type="video/mp4">
        Your browser does not support the video tag.
      </video>
      <figcaption>Video: Worflow of the <i>Risk Assessment</i> tool.</figcaption>
