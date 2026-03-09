@@ -13,9 +13,9 @@ and data-driven parameter prediction across all subcatchments.
 
 Input data
 ----------
-* **gauged_subcatchments.shp** (from *Contributing Area of Gauging Station*)
-* **ungauged_subcatchments.shp** (from *Contributing Area of Gauging Station*)
-* **fixed_river_network.shp** (from *Fix River Network*)
+* **gauged_subcatchments.shp** (from :ref:`Contributing_Area`)
+* **ungauged_subcatchments.shp** (from :ref:`Contributing_Area`)
+* **fixed_river_network.shp** (from :ref:`Fix_River`)
 * **DEM.tif**
 * **water_area.shp**
 * **forest_area.shp**
@@ -104,7 +104,7 @@ Now let's explore the attribute table of the two outputs. You will notice that s
 
 .. _output_data:
 
-.. list-table:: Example of input data sources
+.. list-table:: Attribute table of a possible output of "Calculate Geofactors".
    :header-rows: 1
    :width: 100%
    :widths: 10 20 60 10
@@ -118,7 +118,7 @@ Now let's explore the attribute table of the two outputs. You will notice that s
      - Average standard flow calculated for a certain time series at the gauging station
      - m³/s
    * - M_Low_Flow [#f1]_
-     - Shapefile (.shp)
+     - Mean Low Flow
      - Average low flow calculated for a certain time series at the gauging station
      - m³/s
    * - H_mean
