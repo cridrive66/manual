@@ -8,7 +8,7 @@ The load is calculated according to the formula :math:numref:`load_equation`:
 .. math::
     :label: load_equation
 
-    m_{WW,eff} = i_{WWTP} \cdot m_{i,y} \cdot (1 - r_{WWTP}) / 1000
+    m_{WW,eff} = i_{WWTP} \cdot m_{i,y} \cdot (1 - r_{WWTP}) \cdot 10^{-6}
     
 
 With:
