@@ -36,7 +36,8 @@ selected for the flow at the gauging stations. An example representing these inp
     From left to right: DEM, LULC and precipitation data for the Warnow catchment (Germany).
 
 
-In :numref:`input_data_example` it is shown an example of possible sources where the necessary data can be found.
+In :numref:`input_data_example` it is shown an example of possible sources where the necessary data can be found. For the ERA5 precipitation dataset,
+"Monthly averaged reanalysis" should be selected as *Product type* and "Total precipitation" as *Variable*.
 
 .. _input_data_example:
 
