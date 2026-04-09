@@ -4,7 +4,7 @@ Introduction
 ============
 The *APRIORA* plugin is a QGIS tool divided in two groups:
 
-* :ref:`Flow_Estimation`
+* :ref:`Hydro_Module`
 * :ref:`API_Emission`
 
 The first group of tools is designed to estimate flow in normal and low condition in a catchment, while the
@@ -36,6 +36,7 @@ Latest changhes
 ---------------
 This section contains the most recent changes and updates to the plugin.
 
+*   v.1.0.0: 
 *   v.0.7.2: *7 - Accumulation* is now compatible with polygon river networks. In the previous versions it was necessary to 
     provide the river network as a multi-line shapefile. In the Finnish catchment with the Vemala model this caused some issues
     since the output of the hydrological model is a polygon shapefile. Because of this reason, the tool was adapted to accept 

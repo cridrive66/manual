@@ -6,11 +6,8 @@
 .. figure:: images/APRIORA_Horizontal_Standard-medium.png
 
 *******************************************
-APRIORA plugin manual (v.0.7.2)
+APRIORA plugin manual (v.1.0.0)
 *******************************************
-
-.. important::
-   This version of the manual is still under writing. 
 
 .. toctree::
    :maxdepth: 2
@@ -19,10 +16,11 @@ APRIORA plugin manual (v.0.7.2)
    chapters/Introduction
    chapters/Installation
    chapters/Dummy_data
-   flow_estimation/flow_estimation
+   hydro_module/hydro_module
    api_emission/api_emission
    mitigation/Mitigation_option
    chapters/Troubleshooting
+   chapters/Credits
    chapters/License
 
 

@@ -3,9 +3,6 @@
 Fix River Network
 =================
 
-.. important::
-    Part of this algorithm was developed in the plugin *WaterNetAnalyzer* by Jannik Schilling (`source <https://github.com/Jannik-Schilling/WaterNetAnalyzer>`_).
-
 Understanding the flow direction (where the water is going and which river section is downstream) is a critical aspect of the river network.
 This information is very important for calculating the flow of each river section and determining accumulated values. This tool calculates it and stores it in 
 the attribute table of the output through two important columns:
@@ -53,15 +50,24 @@ Workflow
 --------
 
 1. Add all the input data to the project by clicking on "Layer --> Add Layer --> Add Vector Layer"
-2. Go in the Processing Toolbox and look for the *APRIORA* plugin. Click on *Flow estimation* and open *1 - Fix River Network*
+2. Go in the Processing Toolbox and look for the *APRIORA* plugin. Click on *Hydro-Module* and open *1 - Fix River Network*
 3. Choose **subcatchments.shp** as input for *Catchment areas*
 4. Choose **river_network.shp** as input for *River network*
 5. Click on the three dots and click on the outlet point of the river network. The selected point does not have to be exactly on the outlet, just approximately there.
 6. Click on *Run*
 
 .. important::
-    Video tutorial will be uploaded soon.
+    Video tutorial will follow soon.
 
+.. .. raw:: html
+
+..    <figure>
+..      <video width="700" height="370" controls>
+..        <source src="../_static/video/accumulation_2.mp4" type="video/mp4">
+..        Your browser does not support the video tag.
+..      </video>
+..      <figcaption>Video: Worflow of the <i>Accumulation</i> tool.</figcaption>
+..    </figure>
 
 .. figure::
     images/Fix_river_network_1.png
@@ -71,8 +77,13 @@ Workflow
 Output data:
 
 * **fixed_river_network.shp**
+* **ungauged_subcatchments.shp**
 
-Two new columns have been added to the attribute table: NET_ID and NET_TO. These columns, like explained before, represent respectively the river network ID of each specific section and the river network ID of
-the downstream river section. Before we continue, it is important to check if the new colums are populated correctly for all river sections. If any value under NET_TO is marked as 
-*unconnected*, it might be due to the fact that the river sections are not connected with each others. Check the geometry of the *unconnected* river sections, manually adjust them and re-run the
-tool until there are no *unconnected* values in the NET_TO column. Important: apply the changes to the original file **river_network.shp** and not to **fixed_river_network.shp**.
+In **fixed_river_network.shp**, two new columns have been added to the attribute table: NET_ID and NET_TO. These columns, like explained before, represent respectively 
+the river network ID of each specific section and the river network ID of the downstream river section. Before we continue, it is important to check if the new colums 
+are populated correctly for all river sections. If any value under NET_TO is marked as *unconnected*, it might be due to the fact that the river sections are not connected 
+with each others. Check the geometry of the *unconnected* river sections, manually adjust them and re-run the tool until there are no *unconnected* values in the NET_TO column. 
+Important: apply the changes to the original file **river_network.shp** and not to **fixed_river_network.shp**.
+
+In the attribute table of **ungauged_subcatchments.shp**, you will find a new column called *CATCH_ID*. This field assigns a unique code to each subcatchment
+and river section, making it easier to link subcatchments with their corresponding river section in later steps.

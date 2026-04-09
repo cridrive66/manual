@@ -24,9 +24,10 @@ reduced emissions after treatment.
 
 Input data
 ^^^^^^^^^^
-One input data is necessary for this tool:
+The following input data are necessary for this tool:
 
 * **WWTP.shp**
+* **API_parameters.csv** (from :ref:`wwtp_locations`)
 
 The **WWTP.shp** is a point shapefile containing the emission point of the WWTPs as geometry and important information of the facilities in the attribute table. The required
 information are: ID and name of the WWTP; number of connected inhabitant; number representing the type of treatment (1=primary, 2=secondary, 3=tertiary, 4=quaternary). An
@@ -74,24 +75,19 @@ Workflow
 1. Add the input data to the project by clicking on "Layer -> Add Layer -> Add Vector Layer"
 2. Go in the Processing Toolbox and look for the *APRIORA* plugin. Click on *API emission* and open *6 - Emission Loads*
 3. Choose **WWTP.shp** as input for *Emission Points of WWTP*
-4. Select the correct field of **WWTP.shp** for *ID*, *Name*, *Connected Inhabitants* and *Technology Class*
-5. If you created a custom table from the *API parameter selection* tool, flag the next box, otherwise leave it empty
+4. Select the correct field of **WWTP.shp** for *Connected Inhabitants* and optionally for *WWTP annual effluent flow*
+5. If in :ref:`accumulation` you would like to calculate the dilution ratio, select also the correct field of **WWTP.shp** for *WWTP annual effluent flow*, otherwise leave it empty
+6. Choose **API_parameters.csv** as input file for *API Parameters Table*
+7. Click on *Run*
 
 .. important::
-    Under *Current API Selection* you can see the substances previously selected. This window is only displaying the selection, if you want
-    to change the selection go back to :ref:`API-parameter-selection`.
+    Video tutorial will follow soon.
 
-6. Click on *Run*
 
-.. raw:: html
-
-   <figure>
-     <video width="700" height="370" controls>
-       <source src="../_static/video/Emission_load_2.mp4" type="video/mp4">
-       Your browser does not support the video tag.
-     </video>
-     <figcaption>Video: Worflow of the <i>Emission Loads</i> tool.</figcaption>
-   </figure>
+.. figure::
+    images/emission_loads_interface.png
+    
+    Interface of the "Emission Loads" window.
 
 Output data:
 
