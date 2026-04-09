@@ -24,7 +24,7 @@ APRIORA plugin manual (v.1.0.0)
    chapters/License
 
 
-Credits
+Funding
 -------
 The project leading to this application is funded by the Interreg Baltic Sea Region Programme. Co-founded by the European Union (ERDF),
 this #MadeWithInterreg project helps to remove pollutants from our waters.
