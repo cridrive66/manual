@@ -35,25 +35,42 @@ With:
 - :math:`Q` = mean flow or mean low flow [:math:`m^3\!/s`] 
 - :math:`k` = conversion factor [:math:`\frac{ng/kg \cdot m^3\!/L}{s/a}`]
 
+If WWTP annual effluent was added by the user in :ref:`emission-loads`, a shapefile with point geometry can be produced containing the dilution ratio calculated 
+for each WWTP according to formula :math:numref:`dilution_equation`.
+
+.. math::
+    :label: dilution_equation
+
+    DR = \frac{Q_{WWTP,eff} + Q_{riv}}{Q_{WWTP,eff}}
+    
+
+With:
+
+- :math:`DR` = Dilution Ratio [:math:`-`]
+- :math:`Q_{WWTP,eff}` = flow rate of WWTP effluent [:math:`m^3\!/a`]
+- :math:`Q_{riv}` = flow rate of receving river section [:math:`m^3\!/a`] 
+
+Additionally, if the user would like to calculate the modelled concentration at sampling campaign locations, it is possible to do so by providing to the tool 
+a point shapefile. Thanks to this output, it will be easy to compare monitored vs modelled values and evaluate the performances of the model.
 
 Input data
 ^^^^^^^^^^
-Two input data are required for this tool:
+The following input data are required for this tool:
 
 * **emission_loads.shp** (from :ref:`emission-loads`)
 * **river_level.shp** (from :ref:`flow-estimation-tool`)
+* **monitoring_stations.shp** [optional] 
 
-In case the user already has regionalized flow data, going through the :ref:`Flow_Estimation` set of tools is not necessary. 
+In case the user already has regionalized flow data, going through the :ref:`Hydro_Module` set of tools is not necessary. 
 The important fields that should be in **river_level.shp** are:
 
 - ID field: a column with a unique ID for each river section
 - Next field: a column with the ID of the downstream river section 
-- Mean flow: mean flow value for the single river section [:math:`m^3\!/s`]
 - Accumulated mean flow: sum of the upstream mean flow values [:math:`m^3\!/s`]
-- Mean low flow: mean low flow value for the single river section [:math:`m^3\!/s`]
 - Accumulated mean low flow: sum of the upstream mean low flow values [:math:`m^3\!/s`]
 
 Regarding **emission_loads.shp**, the emission point should be at maximum 500 m from the closest river section, as stated before. If not, edit the location of the point.
+Same regarding **monitoring_stations.shp**.
 
 
 Workflow
@@ -69,28 +86,35 @@ Workflow
     
      - *ID Field* -> NET_ID
      - *Next Field* -> NET_TO
-     - *Mean Flow* -> Mean_Flow
-     - *Acc. Mean Flow* -> calc_Mean\_
-     - *Mean Low Flow* -> M_Low_Flow
-     - *Acc. Mean Low Flow* -> calc_M_Low
-7. Click on *Run*
+     - *Acc. Mean Flow* -> acc_Mean
+     - *Acc. Mean Low Flow* -> acc_M_Low
 
-.. raw:: html
+Optional:
+7. Choose **monitoring_stations.shp** as input for *Monitoring Point*
+8. Click on the three dots positioned in the right of *Monitoring station with modelled values* and select a saving option
+9. Repeat step 8 for *Dilution Ratio*
+10. Click on *Run*
 
-   <figure>
-     <video width="700" height="370" controls>
-       <source src="../_static/video/accumulation_2.mp4" type="video/mp4">
-       Your browser does not support the video tag.
-     </video>
-     <figcaption>Video: Worflow of the <i>Accumulation</i> tool.</figcaption>
-   </figure>
+.. important::
+    Video tutorial will follow soon.
 
+.. figure::
+    images/accumulation_interface_1.png
+    
+    Interface of the "Accumulation" window (pt.1). 
+
+.. figure::
+    images/accumulation_interface_2.png
+    
+    Interface of the "Accumulation" window (pt.2).
 
 Output data:
 
 * **river_accumulation.shp**
+* **monitoring_stations_with_modelled_values.shp** [optional]
+* **dilution_ratio.shp** [optional]
 
-The output is a line shapefile containing the updated geometry of the river network. Its attribute table contains, for each section, the emitted load, the
+The output **river_accumulation.shp** is a line shapefile containing the updated geometry of the river network. Its attribute table contains, for each section, the emitted load, the
 accumulated load and the resulting concentrations under both normal and low-flow condition for each API. :numref:`accumulation_table` shows only a part of the attribute table 
 for one substance and a few river sections.
 
@@ -158,3 +182,10 @@ for one substance and a few river sections.
 .. [#f1] Accumulation of Carbamazepine [:math:`kg/a`]
 .. [#f2] Concentration of Carbamazepine in normal conditions [:math:`ng/L`]
 .. [#f3] Concentration of Carbamazepine in low flow conditions [:math:`ng/L`]
+
+
+The output **monitoring_stations_with_modelled_values.shp** is a point shapefile with the same geometry of **monitoring_stations.shp** and its attribute table is 
+very similar to what is shown in :numref:`accumulation_table`.
+
+The output of **dilution_ratio.shp** is a point shapefile with the same geometry of **emission_loads.shp** and its attribute table contains two extra columns,
+*Q_Riv* and *Dilu_Ratio*, which are respectively the flow rate of receving river section before its conversion in [:math:`m^3\!/a`] and the dilution ratio.

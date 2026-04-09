@@ -14,7 +14,7 @@ and data-driven parameter prediction across all subcatchments.
 Input data
 ----------
 * **gauged_subcatchments.shp** (from :ref:`Contributing_Area`)
-* **ungauged_subcatchments.shp** (from :ref:`Contributing_Area`)
+* **ungauged_subcatchments.shp** (from :ref:`Fix_River`)
 * **fixed_river_network.shp** (from :ref:`Fix_River`)
 * **DEM.tif**
 * **water_area.shp**
@@ -37,7 +37,7 @@ selected for the flow at the gauging stations. An example representing these inp
 
 
 In :numref:`input_data_example` it is shown an example of possible sources where the necessary data can be found. For the ERA5 precipitation dataset,
-"Monthly averaged reanalysis" should be selected as *Product type* and "Total precipitation" as *Variable*.
+"Monthly averaged reanalysis" should be selected as *Product type*, "Total precipitation" as *Variable* and "NetCDF4" as *Data format*.
 
 .. _input_data_example:
 
@@ -69,7 +69,7 @@ Workflow
 --------
 
 1. Add all the input data to the project by clicking on "Layer --> Add Layer --> Add Vector Layer"
-2. Go in the Processing Toolbox and look for the *APRIORA* plugin. Click on *Flow estimation* and open *3 - Calculate Geofactors*
+2. Go in the Processing Toolbox and look for the *APRIORA* plugin. Click on *Hydro-Module* and open *3 - Calculate Geofactors*
 3. Choose **ungauged_subcatchments.shp** as input for *Ungauged subcatchments*
 4. Choose **gauged_subcatchments.shp** as input for *Gauged subcatchments*
 5. Choose **DEM.tif** as input for *Digital surface model*
@@ -77,12 +77,14 @@ Workflow
 7. Choose **water_area.shp** as input for *Water area*
 8. Choose **forest_area.shp** as input for *Forest area*
 9. Choose **settlement_area.shp** as input for *Settlement area*
-10. Select the **precipitation data** folder containing the time serie of raster file or the aggregated file and tick the box accordingly
-11. Click on *Run*
+10. Select the **precipitation data** folder containing your NetCDF (.nc) data. The tool accepts multiple files 
+    (one .nc file per year) or single file (one aggregated .nc file containing the full time series). Then tick the box accordingly (e.g., if the 
+    precipitation file has been downloaded from ERA5, tick this box)
+11. Select which is the driest month in the catchment (default value: August)
+12. Click on *Run*
 
 .. important::
-    Video tutorial will be uploaded soon.
-
+    Video tutorial will follow soon.
 
 .. figure::
     images/calculate_geofactors_interface_1.png
@@ -105,7 +107,7 @@ Now let's explore the attribute table of the two outputs. You will notice that s
 
 .. _output_data:
 
-.. list-table:: Attribute table of a possible output of "Calculate Geofactors".
+.. list-table:: Attribute table of the output of "Calculate Geofactors".
    :header-rows: 1
    :width: 100%
    :widths: 10 20 60 10
@@ -174,9 +176,9 @@ Now let's explore the attribute table of the two outputs. You will notice that s
      - Yearly precipitation
      - Average yearly precipitation
      - mm
-   * - PrecAugust
-     - August precipitation
-     - Average August precipitation
+   * - PrecDry
+     - Dry month precipitation
+     - Average precipitation during the dry month
      - mm
 
     

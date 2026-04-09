@@ -16,7 +16,7 @@ This tool allows us to calculate the area upstream each gauging station, which w
 Input data
 ----------
 
-* **subcatchments.shp**
+* **ungauged_subcatchments.shp** (from :ref:`Fix_River`)
 * **fixed_river_network.shp** (from :ref:`Fix_River`)
 * **gauging_stations.shp**
 
@@ -61,17 +61,16 @@ Workflow
 --------
 
 1. Add all the input data to the project by clicking on "Layer --> Add Layer --> Add Vector Layer"
-2. Go in the Processing Toolbox and look for the *APRIORA* plugin. Click on *Flow estimation* and open *2 - Contributing Area of Gauging Station*
-3. Choose **subcatchments.shp** as input for *Catchment areas*
-4. Choose **fixed_river_network.shp** as input for *River network*
+2. Go in the Processing Toolbox and look for the *APRIORA* plugin. Click on *Hydro-Module* and open *2 - Contributing Area of Gauging Station*
+3. Choose **ungauged_subcatchments.shp** as input for *Ungauged subcatchments*
+4. Choose **fixed_river_network.shp** as input for *Fixed river network*
 5. Choose **gauging_stations.shp** as input for *Gauging stations*
 6. Select the *Mean Flow* field and *Mean Low Flow* field from **gauging_stations.shp**
 7. Click on *Run*
 
 .. important::
-    Video tutorial will be uploaded soon.
-
-
+    Video tutorial will follow soon.
+    
 .. figure::
     images/contr_area_interface.png
     
@@ -80,11 +79,7 @@ Workflow
 Output data:
 
 * **gauged_subcatchments.shp**
-* **ungauged_subcatchments.shp**
 
 Open the attribute table of **gauged_subcatchments.shp** and check its features. Each feature represents the contributing area for a gauging station. If
 there is more than one gauging station, you will notice that the contributing areas are overlapping. If you want to highlight a specific feature, right-click
 on it and select *Flash Feature*. Important to notice: there are two extra fields called *Mean_Flow* and *M_Low_Flow* that were directly transferred from **gauging_stations.shp**.
-
-Now, open the attribute table of **ungauged_subcatchments.shp**. You will find a new column called *id_catch*. This field assigns a unique code to each subcatchment
-and river section, making it easier to link subcatchments with their corresponding river section in later steps.

@@ -5,7 +5,7 @@ Installation for Windows
 
 Extra library required
 ----------------------
-| To run the :ref:`Flow_Estimation` tool, an extra library called **scikit-learn** (`source <https://scikit-learn.org/stable/>`_) is necessary and 
+| To run the :ref:`Hydro_Module` tool, an extra library called **scikit-learn** (`source <https://scikit-learn.org/stable/>`_) is necessary and 
  is not included in the standard QGIS installation. In case you already have regionalized flow data, you can skip this step. To install the missing package:
 
 1. Open "OSGeo4W Shell", you can find it already installed with QGIS.
@@ -17,11 +17,8 @@ Extra library required
 
 | If you encounter errors, check the :ref:`Troubleshooting` section.
 
-Installation via local repository
----------------------------------
-Since the tool is not published yet in the official QGIS repository, it is necessary to add a local repository to have access to its download.
-It is possible to do so by following these steps:
-
+Installation via the official QGIS repository
+---------------------------------------------
 1. Open QGIS and go to *Plugins* --> *Manage and Install Plugins* (:numref:`installation-location-fig`)
 
 .. _installation-location-fig:
@@ -30,6 +27,14 @@ It is possible to do so by following these steps:
       
       Location of Manage and Install Plugins.
 
+2. Go to *All* and digit "APRIORA" in the search bar
+3. Click on *Install Plugin*
+
+Installation via local repository
+---------------------------------
+In case the plugin can't be found in the official QGIS repository, it is possible to add a local repository to have access to its download.
+
+1. Open QGIS and go to *Plugins* --> *Manage and Install Plugins* (:numref:`installation-location-fig`)
 2. Go to *Settings* and click on *Add...*
 3. Under *Name* digit "APRIORA repository" (or whatever you prefer)
 4. Under *URL* insert ``https://cridrive66.github.io/APRIORA-rep/plugin.xml`` (:numref:`repository_1-fig`)

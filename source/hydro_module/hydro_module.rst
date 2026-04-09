@@ -1,12 +1,9 @@
-.. important::
-   This version of the manual is still under writing. 
+.. _Hydro_Module:
 
-.. _Flow_Estimation:
+Hydro-Module
+============
 
-Flow Estimation
-===============
-
-The *Flow Estimation* provides an estimation of yearly mean flow and yearly mean low fow for each subcatchment or 
+The *Hydro-Module* provides an estimation of yearly mean flow and yearly mean low fow for each subcatchment or 
 river section within a specified catchment area. This estimation is made by **Random Forest** (`source <https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html>`_), 
 which uses the catchment's geographical characteristics as predictors and water flow data collected from gauging stations
 to calibrate and validate the approach.
